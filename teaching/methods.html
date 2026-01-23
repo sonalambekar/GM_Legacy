@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<!-- Teaching and Learning Methods page -->
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teaching and Learning Methods - GM Legacy School</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="../assests/logo.png">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Main Stylesheet -->
+    <link rel="stylesheet" href="../css/style.css">
+    <style>
+        .page-header {
+            background-color: transparent;
+            color: var(--primary-color);
+            padding: 40px 0;
+            text-align: center;
+            border-bottom: 1px solid #eee;
+        }
+
+        .page-content {
+            padding: 60px 0;
+            background-color: #f9f9f9;
+        }
+
+        .content-block {
+            background: #fff;
+            padding: 50px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            margin-bottom: 30px;
+        }
+
+        .content-block h2 {
+            color: var(--primary-color);
+            margin-bottom: 30px;
+            font-family: 'Playfair Display', serif;
+            border-bottom: 2px solid var(--secondary-color);
+            display: inline-block;
+            padding-bottom: 5px;
+        }
+
+        .content-block h3 {
+            color: var(--primary-color);
+            margin-bottom: 20px;
+            font-family: 'Playfair Display', serif;
+            font-size: 1.4rem;
+        }
+
+        .content-block p {
+            line-height: 1.8;
+            color: var(--text-dark);
+            margin-bottom: 20px;
+            font-size: 1.05rem;
+            text-align: justify;
+        }
+
+        .intro-text {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: var(--text-dark);
+            margin-bottom: 25px;
+        }
+
+        .highlight-box {
+            background: linear-gradient(135deg, var(--secondary-light), #f5f0d8);
+            padding: 25px;
+            border-radius: 10px;
+            border-left: 4px solid var(--secondary-color);
+            margin: 25px 0;
+        }
+
+        .highlight-box p {
+            margin: 0;
+            color: var(--primary-color);
+            font-weight: 500;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Header -->
+    <header class="header" id="header">
+        <!-- Top Bar (Gold) -->
+        <div class="top-bar">
+            <div class="container">
+                <div class="top-bar-left">
+                    <div class="top-bar-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        P B Road, Davanagere
+                    </div>
+                    <div class="top-bar-item">
+                        <i class="fas fa-phone-alt"></i>
+                        <a href="tel:8192233344">8192233344</a>
+                    </div>
+                    <div class="top-bar-item">
+                        <i class="fas fa-envelope"></i>
+                        <a href="mailto:info@gmls.ac.in">info@gmls.ac.in</a>
+                    </div>
+                </div>
+                <div class="top-bar-right">
+                    <a href="../index.html#gallery" class="top-bar-item">
+                        <i class="fas fa-images"></i> Gallery
+                    </a>
+                    <a href="#" class="login-btn">Login</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main Navigation (Maroon) -->
+        <nav class="nav-section">
+            <div class="container">
+                <div class="header-logo-wrap">
+                    <a href="../index.html">
+                        <img src="../assests/logo.png" alt="GM Legacy School Logo" class="logo">
+                    </a>
+                </div>
+
+                <div class="nav-content-wrap">
+                    <div class="nav-menu-wrapper">
+                        <div class="nav-row row-1">
+                            <div class="dropdown">
+                                <a href="#about" class="nav-link" id="aboutDropdown">About</a>
+                                <div class="dropdown-content">
+                                    <a href="../about/vision-mission.html">Vision, Mission & Objectives</a>
+                                    <a href="../about/founders-message.html">Founder's Message</a>
+                                    <a href="../about/principals-message.html">Principal's Message</a>
+                                    <a href="../about/philosophy-values.html">School Philosophy & Values</a>
+                                    <a href="../about/nep-alignment.html">NEP 2020 Alignment</a>
+                                    <a href="../about/school-history.html">School History / Legacy</a>
+                                    <a href="../about/governance.html">Governance & Management</a>
+                                    <a href="../about/public-disclosure.html">Mandatory Public Disclosure (CBSE)</a>
+                                </div>
+                            </div>
+                            <div class="dropdown">
+                                <a href="#admissions" class="nav-link" id="admissionsDropdown">Admissions</a>
+                                <div class="dropdown-content">
+                                    <a href="../admissions/overview.html">Admission Overview</a>
+                                    <a href="../admissions/eligibility.html">Eligibility Criteria</a>
+                                    <a href="../admissions/process.html">Admission Process</a>
+                                    <a href="../admissions/schedule.html">Admission Schedule</a>
+                                    <a href="../admissions/transfer.html">Transfer Admissions</a>
+                                    <a href="../admissions/faqs.html">FAQs on Admissions</a>
+                                </div>
+                            </div>
+                            <div class="dropdown">
+                                <a href="#programs" class="nav-link" id="boardDropdown">Board & Schools</a>
+                                <div class="dropdown-content">
+                                    <a href="../board/affiliation.html">CBSE Affiliation Details</a>
+                                    <a href="../board/nep-structure.html"
+                                        style="font-weight: 600; color: var(--primary-color);">NEP Structure of
+                                        School</a>
+                                    <a href="../board/nep-foundational.html" style="padding-left: 30px;">Foundational
+                                        Stage</a>
+                                    <a href="../board/nep-preparatory.html" style="padding-left: 30px;">Preparatory
+                                        Stage</a>
+                                    <a href="../board/nep-middle.html" style="padding-left: 30px;">Middle School</a>
+                                    <a href="../board/nep-secondary.html" style="padding-left: 30px;">Secondary School</a>
+                                    <a href="../board/academic-calendar.html">Academic Calendar</a>
+                                    <a href="../board/examination-assessment.html">Examination & Assessment System</a>
+                                    <a href="../board/policies-guidelines.html">Policies & Guidelines</a>
+                                </div>
+                            </div>
+                            <div class="dropdown">
+                                <a href="#curriculum" class="nav-link" id="curriculumDropdown">Curriculum</a>
+                                <div class="dropdown-content">
+                                    <a href="../curriculum/nep-framework.html">NEP-Based Curriculum Framework</a>
+                                    <a href="../curriculum/foundational-curriculum.html">Foundational Stage Curriculum</a>
+                                    <a href="../curriculum/primary-curriculum.html">Primary Curriculum</a>
+                                    <a href="../curriculum/middle-curriculum.html">Middle School Curriculum</a>
+                                    <a href="../curriculum/secondary-curriculum.html">Secondary Curriculum</a>
+                                    <a href="../curriculum/skill-based-education.html">Skill-Based Education</a>
+                                    <a href="../curriculum/value-education.html">Value Education & Life Skills</a>
+                                </div>
+                            </div>
+                            <div class="dropdown">
+                                <a href="#teaching" class="nav-link active">Teaching and Learning</a>
+                                <div class="dropdown-content">
+                                    <a href="methods.html" class="active">Teaching and Learning Methods</a>
+                                </div>
+                            </div>
+                            <div class="dropdown">
+                                <a href="#extracurricular" class="nav-link">Co and Extra Curricular</a>
+                                <div class="dropdown-content">
+                                    <a href="../extracurricular/activities.html">Co-Curricular and Extra-Curricular Activities</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="nav-row row-2">
+                            <a href="../facilities/index.html" class="nav-link">Facilities</a>
+                            <a href="../fee/index.html" class="nav-link">Fee</a>
+                            <a href="../faculty/index.html" class="nav-link">Faculty</a>
+                            <a href="../residential/index.html" class="nav-link">Residential Facilities</a>
+                            <a href="../campus/index.html" class="nav-link">Campus</a>
+                            <a href="#disclosures" class="nav-link">Mandatory Disclosures</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="hamburger" id="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Page Header -->
+        <section class="page-header">
+            <div class="container">
+                <div class="page-header-content">
+                    <h1>Teaching and Learning at GM Legacy School</h1>
+                </div>
+            </div>
+        </section>
+
+        <!-- Page Content -->
+        <section class="page-content">
+            <div class="container">
+                <!-- Introduction -->
+                <div class="content-block">
+                    <h2>Teaching and Learning at GM Legacy School</h2>
+                    <p class="intro-text">At GM Legacy School, teaching and learning are guided by the belief that every child can learn and succeed when provided with the right environment, guidance, and opportunities.</p>
+                    
+                    <div class="highlight-box">
+                        <p>Our teaching–learning processes are designed to make education meaningful, joyful, engaging, and effective, while preparing students for academic excellence, life skills, and responsible citizenship.</p>
+                    </div>
+                </div>
+
+                <!-- Teaching Philosophy -->
+                <div class="content-block">
+                    <h2>Our Teaching Philosophy</h2>
+                    <p>Our teaching philosophy is based on the following principles:</p>
+                    <p>• <strong>Learner-Centred Education</strong> – The child is at the centre of the learning process.</p>
+                    <p>• <strong>Active Learning</strong> – Students learn best by doing, questioning, and reflecting.</p>
+                    <p>• <strong>Holistic Development</strong> – Equal importance to academics, skills, values, arts, and sports.</p>
+                    <p>• <strong>Inclusivity</strong> – Every learner is supported according to individual needs.</p>
+                    <p>• <strong>Continuous Improvement</strong> – Teaching practices are reviewed and refined regularly.</p>
+                </div>
+
+                <!-- Teaching-Learning Approaches -->
+                <div class="content-block">
+                    <h2>Teaching–Learning Approaches</h2>
+                    
+                    <h3>1. Concept-Based Teaching</h3>
+                    <p>• Focus on understanding concepts rather than memorising facts.</p>
+                    <p>• Use of examples, demonstrations, and real-life applications.</p>
+
+                    <h3>2. Experiential and Activity-Based Learning</h3>
+                    <p>• Learning through experiments, projects, role play, and field visits.</p>
+                    <p>• Hands-on activities in classrooms and laboratories.</p>
+
+                    <h3>3. Inquiry and Problem-Based Learning</h3>
+                    <p>• Encouraging students to ask questions, investigate, and solve problems.</p>
+                    <p>• Development of critical thinking and analytical skills.</p>
+
+                    <h3>4. Differentiated Instruction</h3>
+                    <p>• Teaching strategies adapted to suit different learning styles and abilities.</p>
+                    <p>• Remedial support for slow learners and enrichment for advanced learners.</p>
+
+                    <h3>5. Integration of Technology</h3>
+                    <p>• Use of smart classrooms, digital resources, and online platforms.</p>
+                    <p>• Promoting digital literacy and responsible use of technology.</p>
+                </div>
+
+                <!-- Role of the Teacher -->
+                <div class="content-block">
+                    <h2>Role of the Teacher</h2>
+                    <p>At GM Legacy School, teachers are:</p>
+                    <p>• Facilitators of learning, not just transmitters of information</p>
+                    <p>• Mentors and guides who nurture curiosity and confidence</p>
+                    <p>• Role models who uphold values, discipline, and integrity</p>
+                    <p>• Lifelong learners who continuously update their knowledge and skills</p>
+                    <p>Regular teacher training and professional development programmes ensure high-quality teaching.</p>
+                </div>
+
+                <!-- Learning Environment -->
+                <div class="content-block">
+                    <h2>Learning Environment</h2>
+                    <p>We provide:</p>
+                    <p>• Well-designed, child-friendly classrooms</p>
+                    <p>• Science and computer laboratories</p>
+                    <p>• Library and reading spaces</p>
+                    <p>• Activity rooms and sports facilities</p>
+                    <p>• Safe, clean, and inclusive campus</p>
+                    <p>The learning environment is designed to be stimulating, safe, and supportive.</p>
+                </div>
+
+                <!-- Assessment -->
+                <div class="content-block">
+                    <h2>Assessment Integrated with Teaching</h2>
+                    <p>• Continuous and formative assessments guide teaching strategies.</p>
+                    <p>• Regular feedback helps students understand their strengths and areas for improvement.</p>
+                    <p>• Teaching is adjusted based on assessment outcomes.</p>
+                </div>
+
+                <!-- Student Support -->
+                <div class="content-block">
+                    <h2>Student Support Systems</h2>
+                    <p>• Academic mentoring and counselling</p>
+                    <p>• Remedial classes and enrichment programmes</p>
+                    <p>• Career guidance and life skills mentoring</p>
+                    <p>• Support for students with special educational needs</p>
+                </div>
+
+                <!-- Parental Partnership -->
+                <div class="content-block">
+                    <h2>Parental Partnership</h2>
+                    <p>We believe in a strong school–parent partnership. The school:</p>
+                    <p>• Communicates regularly with parents</p>
+                    <p>• Conducts Parent–Teacher Meetings</p>
+                    <p>• Shares academic progress and feedback</p>
+                    <p>• Encourages parental involvement in school life</p>
+                </div>
+
+                <!-- Learning Outcomes -->
+                <div class="content-block">
+                    <h2>Learning Outcomes</h2>
+                    <p>Through our teaching–learning processes, students will:</p>
+                    <p>• Develop strong conceptual understanding</p>
+                    <p>• Become independent and confident learners</p>
+                    <p>• Think critically and creatively</p>
+                    <p>• Communicate effectively and collaborate well</p>
+                    <p>• Grow into responsible, ethical, and capable individuals</p>
+                </div>
+
+                <!-- Our Commitment -->
+                <div class="content-block">
+                    <h2>Our Commitment</h2>
+                    <p>At GM Legacy School, we are committed to:</p>
+                    <p>• High-quality teaching and learning</p>
+                    <p>• Continuous improvement and innovation</p>
+                    <p>• Child-centred and value-based education</p>
+                    <p>• Preparing students for academic success and life beyond school</p>
+                    
+                    <div class="highlight-box">
+                        <p><strong>We strive to make every classroom a place where learning is joyful, meaningful, and transformative.</strong></p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer" id="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <img src="../assests/logo.png" alt="GM Legacy School Logo" class="footer-logo">
+                    <p>GM Legacy School is dedicated to providing quality education and nurturing young minds to become
+                        responsible citizens and future leaders.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <a href="../index.html#about">About</a>
+                    <a href="../index.html#admissions">Admissions</a>
+                    <a href="../index.html#curriculum">Curriculum</a>
+                    <a href="../index.html#facilities">Facilities</a>
+                    <a href="../index.html#faculty">Faculty</a>
+                    <a href="../index.html#disclosures">Mandatory Disclosures</a>
+                </div>
+                <div class="footer-section">
+                    <h3>Contact Us</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> P B Road, Davanagere-577 006, Karnataka</p>
+                    <p><i class="fas fa-phone-alt"></i> +91 XXXXXXXXXX</p>
+                    <p><i class="fas fa-envelope"></i> info@gmls.ac.in</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Follow Us</h3>
+                    <p>
+                        <a href="#"><i class="fab fa-facebook-f"></i> Facebook</a>
+                    </p>
+                    <p>
+                        <a href="#"><i class="fab fa-instagram"></i> Instagram</a>
+                    </p>
+                    <p>
+                        <a href="#"><i class="fab fa-youtube"></i> YouTube</a>
+                    </p>
+                    <p>
+                        <a href="#"><i class="fab fa-twitter"></i> Twitter</a>
+                    </p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 GM Legacy School. All Rights Reserved. | Designed with <i class="fas fa-heart"
+                        style="color: #e9c66f;"></i></p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Main JavaScript -->
+    <script src="../js/main.js"></script>
+</body>
+
+</html>

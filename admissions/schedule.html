@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admission Schedule | GM Legacy School</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="../assests/logo.png">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Main Stylesheet -->
+    <link rel="stylesheet" href="../css/style.css">
+    <style>
+        .page-header {
+            background-color: transparent;
+            color: var(--primary-color);
+            padding: 40px 0;
+            text-align: center;
+            border-bottom: 1px solid #eee;
+        }
+
+        .page-content {
+            padding: 60px 0;
+            background-color: #f9f9f9;
+        }
+
+        .content-block {
+            background: #fff;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            margin-bottom: 30px;
+        }
+
+        .content-block h2 {
+            color: var(--primary-color);
+            margin-bottom: 25px;
+            font-family: 'Playfair Display', serif;
+            border-bottom: 2px solid var(--secondary-color);
+            display: inline-block;
+            padding-bottom: 5px;
+        }
+
+        /* Calendar Table */
+        .calendar-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+            background: #fff;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+        }
+
+        .calendar-table th {
+            background: var(--primary-color);
+            color: #fff;
+            padding: 18px;
+            text-align: left;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 500;
+        }
+
+        .calendar-table td {
+            padding: 15px 18px;
+            border-bottom: 1px solid #eee;
+            color: var(--text-color);
+            font-size: 0.95rem;
+        }
+
+        .calendar-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        .calendar-table tr:nth-child(even) {
+            background: #fdfdfd;
+        }
+
+        .calendar-table tr:hover {
+            background: #fdfae6;
+        }
+
+        .sl-no {
+            width: 80px;
+            font-weight: 600;
+            color: var(--primary-color);
+        }
+
+        .date-col {
+            font-weight: 600;
+            color: var(--primary-color);
+        }
+
+        /* Class Window Grid */
+        .window-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            margin-top: 25px;
+        }
+
+        .window-card {
+            background: #fff;
+            padding: 25px;
+            border-radius: 12px;
+            border: 1px solid #eee;
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .window-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: var(--secondary-color);
+        }
+
+        .window-card h3 {
+            color: var(--primary-color);
+            margin-bottom: 12px;
+            font-size: 1.1rem;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .window-card p {
+            color: var(--text-color);
+            font-weight: 600;
+            font-size: 1.1rem;
+            margin-bottom: 0;
+        }
+
+        .window-card span {
+            display: block;
+            font-size: 0.85rem;
+            color: #888;
+            margin-top: 5px;
+            font-weight: 400;
+        }
+
+        /* Timing Box */
+        .office-timing-box {
+            background: #fff;
+            border: 2px solid var(--primary-color);
+            border-radius: 12px;
+            padding: 35px;
+            margin-top: 40px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            align-items: center;
+        }
+
+        .timing-left h3 {
+            color: var(--primary-color);
+            margin-bottom: 20px;
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+        }
+
+        .timing-info {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .info-item {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .info-item i {
+            width: 40px;
+            height: 40px;
+            background: var(--secondary-color);
+            color: var(--primary-color);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+        }
+
+        .info-text strong {
+            display: block;
+            font-size: 0.9rem;
+            color: #777;
+        }
+
+        .info-text p {
+            color: var(--primary-color);
+            font-weight: 600;
+            margin: 0;
+        }
+
+        @media (max-width: 768px) {
+            .office-timing-box {
+                grid-template-columns: 1fr;
+                padding: 25px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- ===== HEADER ===== -->
+    <header class="header" id="header">
+        <!-- Top Bar (Gold) -->
+        <div class="top-bar">
+            <div class="container">
+                <div class="top-bar-left">
+                    <div class="top-bar-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        P B Road, Davanagere
+                    </div>
+                    <div class="top-bar-item">
+                        <i class="fas fa-phone-alt"></i>
+                        <a href="tel:8192233344">8192233344</a>
+                    </div>
+                    <div class="top-bar-item">
+                        <i class="fas fa-envelope"></i>
+                        <a href="mailto:info@gmls.ac.in">info@gmls.ac.in</a>
+                    </div>
+                </div>
+                <div class="top-bar-right">
+                    <a href="../index.html#gallery" class="top-bar-item">
+                        <i class="fas fa-images"></i> Gallery
+                    </a>
+                    <a href="#" class="login-btn">Login</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main Navigation (Maroon) -->
+        <nav class="nav-section">
+            <div class="container">
+                <div class="header-logo-wrap">
+                    <a href="../index.html">
+                        <img src="../assests/logo.png" alt="GM Legacy School Logo" class="logo">
+                    </a>
+                </div>
+
+                <div class="nav-content-wrap">
+                    <div class="nav-menu-wrapper">
+                        <div class="nav-row row-1">
+                            <div class="dropdown">
+                                <a href="#about" class="nav-link" id="aboutDropdown">About</a>
+                                <div class="dropdown-content">
+                                    <a href="../about/vision-mission.html">Vision, Mission & Objectives</a>
+                                    <a href="../about/founders-message.html">Founder’s Message</a>
+                                    <a href="../about/principals-message.html">Principal’s Message</a>
+                                    <a href="../about/philosophy-values.html">School Philosophy & Values</a>
+                                    <a href="../about/nep-alignment.html">NEP 2020 Alignment</a>
+                                    <a href="../about/school-history.html">School History / Legacy</a>
+                                    <a href="../about/governance.html">Governance & Management</a>
+                                    <a href="../about/public-disclosure.html">Mandatory Public Disclosure (CBSE)</a>
+                                </div>
+                            </div>
+                            <div class="dropdown">
+                                <a href="#admissions" class="nav-link" id="admissionsDropdown">Admissions</a>
+                                <div class="dropdown-content">
+                                    <a href="../admissions/overview.html">Admission Overview</a>
+                                    <a href="../admissions/eligibility.html">Eligibility Criteria</a>
+                                    <a href="../admissions/process.html">Admission Process</a>
+                                    <a href="../admissions/schedule.html">Admission Schedule</a>
+                                    <a href="../admissions/transfer.html">Transfer Admissions</a>
+                                    <a href="../admissions/faqs.html">FAQs on Admissions</a>
+                                </div>
+                            </div>
+                            <div class="dropdown">
+                                <a href="#board" class="nav-link" id="boardDropdown">Board & Schools</a>
+                                <div class="dropdown-content">
+                                    <a href="../board/affiliation.html">CBSE Affiliation Details</a>
+                                    <a href="../board/nep-structure.html" style="font-weight: 600; color: var(--primary-color);">NEP Structure of School</a>
+                                    <a href="../board/nep-foundational.html" style="padding-left: 30px;">Foundational Stage</a>
+                                    <a href="../board/nep-preparatory.html" style="padding-left: 30px;">Preparatory Stage</a>
+                                    <a href="../board/nep-middle.html" style="padding-left: 30px;">Middle School</a>
+                                    <a href="../board/nep-secondary.html" style="padding-left: 30px;">Secondary School</a>
+                                    <a href="../board/academic-calendar.html">Academic Calendar</a>
+                                    <a href="../board/examination-assessment.html">Examination & Assessment System</a>
+                                    <a href="../board/policies-guidelines.html">Policies & Guidelines</a>
+                                </div>
+                            </div>
+                            <div class="dropdown">
+                                <a href="#curriculum" class="nav-link" id="curriculumDropdown">Curriculum</a>
+                                <div class="dropdown-content">
+                                    <a href="../curriculum/nep-framework.html">NEP-Based Curriculum Framework</a>
+                                    <a href="../curriculum/foundational-curriculum.html">Foundational Stage Curriculum</a>
+                                    <a href="../curriculum/primary-curriculum.html">Primary Curriculum</a>
+                                    <a href="../curriculum/middle-curriculum.html">Middle School Curriculum</a>
+                                    <a href="../curriculum/secondary-curriculum.html">Secondary Curriculum</a>
+                                    <a href="../curriculum/skill-based-education.html">Skill-Based Education</a>
+                                    <a href="../curriculum/value-education.html">Value Education & Life Skills</a>
+                                </div>
+                            </div>
+                            <div class="dropdown">
+                                <a href="#teaching" class="nav-link">Teaching and Learning</a>
+                                <div class="dropdown-content">
+                                    <a href="../teaching/methods.html">Teaching and Learning Methods</a>
+                                </div>
+                            </div>
+                            <div class="dropdown">
+                                <a href="#extracurricular" class="nav-link">Co and Extra Curricular</a>
+                                <div class="dropdown-content">
+                                    <a href="../extracurricular/activities.html">Co-Curricular and Extra-Curricular Activities</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="nav-row row-2">
+                            <a href="../index.html#facilities" class="nav-link">Facilities</a>
+                            <a href="../index.html#fee" class="nav-link">Fee</a>
+                            <a href="../index.html#faculty" class="nav-link">Faculty</a>
+                            <a href="../index.html#residential" class="nav-link">Residential Facilities</a>
+                            <a href="../index.html#campus" class="nav-link">Campus</a>
+                            <a href="../index.html#disclosures" class="nav-link">Mandatory Disclosures</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="hamburger" id="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- ===== PAGE HEADER ===== -->
+    <section class="page-header">
+        <div class="container">
+            <h1>Admission Schedule</h1>
+        </div>
+    </section>
+
+    <!-- ===== MAIN CONTENT ===== -->
+    <section class="page-content">
+        <div class="container">
+            <div class="content-block">
+                <p>Admissions to GM Legacy School are conducted according to a well-defined schedule to ensure a smooth
+                    and timely admission process for parents and students. For the upcoming Academic Year, the tentative
+                    admission schedule is as follows:</p>
+
+                <h2>Admission Calendar</h2>
+                <div style="overflow-x: auto;">
+                    <table class="calendar-table">
+                        <thead>
+                            <tr>
+                                <th class="sl-no">Sl. No.</th>
+                                <th>Activity</th>
+                                <th>Tentative Dates</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="sl-no">1</td>
+                                <td>Issue of Enquiry & Application Forms</td>
+                                <td class="date-col">1st January – 31st March</td>
+                            </tr>
+                            <tr>
+                                <td class="sl-no">2</td>
+                                <td>Submission of Application Forms</td>
+                                <td class="date-col">1st January – 31st March</td>
+                            </tr>
+                            <tr>
+                                <td class="sl-no">3</td>
+                                <td>Interaction / Assessment</td>
+                                <td class="date-col">15th February – 15th April</td>
+                            </tr>
+                            <tr>
+                                <td class="sl-no">4</td>
+                                <td>Declaration of Provisional Selection</td>
+                                <td class="date-col">Within 7 days of Interaction</td>
+                            </tr>
+                            <tr>
+                                <td class="sl-no">5</td>
+                                <td>Fee Payment & Document Verification</td>
+                                <td class="date-col">Within 5 working days of Selection</td>
+                            </tr>
+                            <tr>
+                                <td class="sl-no">6</td>
+                                <td>Issue of Admission Confirmation</td>
+                                <td class="date-col">Immediately after Fee Payment</td>
+                            </tr>
+                            <tr>
+                                <td class="sl-no">7</td>
+                                <td>Orientation Programme for Parents & Students</td>
+                                <td class="date-col">Last Week of May</td>
+                            </tr>
+                            <tr>
+                                <td class="sl-no">8</td>
+                                <td>Commencement of Academic Session</td>
+                                <td class="date-col">First Week of June</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Admission Windows -->
+            <div class="content-block">
+                <h2>Class-wise Admission Window</h2>
+                <div class="window-grid">
+                    <div class="window-card">
+                        <h3>Foundational Stage</h3>
+                        <p>January – April</p>
+                        <span>Pre-Nursery to UKG</span>
+                    </div>
+                    <div class="window-card">
+                        <h3>Preparatory Stage</h3>
+                        <p>January – April</p>
+                        <span>Class I to III</span>
+                    </div>
+                    <div class="window-card">
+                        <h3>Middle School</h3>
+                        <p>January – May</p>
+                        <span>Class IV to VIII (Subject to seat availability)</span>
+                    </div>
+                    <div class="window-card">
+                        <h3>Secondary School</h3>
+                        <p>Guidelines Dependent</p>
+                        <span>Class IX & XI (As per CBSE & State Govt guidelines)</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Important Notes -->
+            <div class="content-block">
+                <h2>Important Notes</h2>
+                <ul class="guidelines-list">
+                    <li><i class="fas fa-info-circle" style="color:var(--secondary-color); margin-right:10px;"></i> The
+                        above schedule is tentative and may be revised by the School Management from time to time.</li>
+                    <li><i class="fas fa-info-circle" style="color:var(--secondary-color); margin-right:10px;"></i>
+                        Admissions are subject to availability of seats in each class.</li>
+                    <li><i class="fas fa-info-circle" style="color:var(--secondary-color); margin-right:10px;"></i> Late
+                        applications may be considered only if vacancies exist.</li>
+                    <li><i class="fas fa-info-circle" style="color:var(--secondary-color); margin-right:10px;"></i> For
+                        Class IX and XI, admissions will be strictly as per CBSE regulations.</li>
+                    <li><i class="fas fa-info-circle" style="color:var(--secondary-color); margin-right:10px;"></i>
+                        Parents are advised to complete all formalities well before the commencement of the academic
+                        session.</li>
+                </ul>
+            </div>
+
+            <!-- Timing Block -->
+            <div class="office-timing-box">
+                <div class="timing-left">
+                    <h3>Admission Office Timings</h3>
+                    <p>Our admissions team is available to assist you during the following hours:</p>
+                </div>
+                <div class="timing-info">
+                    <div class="info-item">
+                        <i class="fas fa-calendar-alt"></i>
+                        <div class="info-text">
+                            <strong>Working Days</strong>
+                            <p>Monday to Saturday</p>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-clock"></i>
+                        <div class="info-text">
+                            <strong>Office Hours</strong>
+                            <p>9.00 AM to 4.00 PM</p>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-phone-alt"></i>
+                        <div class="info-text">
+                            <strong>Phone</strong>
+                            <p>[To be filled]</p>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-envelope"></i>
+                        <div class="info-text">
+                            <strong>Email</strong>
+                            <p>[To be filled]</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="footer" id="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <img src="../assests/logo.png" alt="GM Legacy School Logo" class="footer-logo">
+                    <p>GM Legacy School is dedicated to providing quality education and nurturing young minds to become
+                        responsible citizens and future leaders.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <a href="../index.html#about">About Us</a>
+                    <a href="../index.html#admissions">Admissions</a>
+                    <a href="../index.html#curriculum">Curriculum</a>
+                    <a href="../index.html#facilities">Facilities</a>
+                    <a href="../index.html#faculty">Faculty</a>
+                    <a href="../about/public-disclosure.html">Mandatory Disclosures</a>
+                </div>
+                <div class="footer-section">
+                    <h3>Contact Us</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> P B Road, Davanagere-577 006</p>
+                    <p><i class="fas fa-phone-alt"></i> +91 XXXXXXXXXX</p>
+                    <p><i class="fas fa-envelope"></i> info@gmls.ac.in</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Follow Us</h3>
+                    <p><a href="#"><i class="fab fa-facebook-f"></i> Facebook</a></p>
+                    <p><a href="#"><i class="fab fa-instagram"></i> Instagram</a></p>
+                    <p><a href="#"><i class="fab fa-youtube"></i> YouTube</a></p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 GM Legacy School. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/main.js"></script>
+</body>
+
+</html>

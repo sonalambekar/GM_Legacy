@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<!-- Fee Structure page -->
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fee Structure - GM Legacy School</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="../assests/logo.png">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Main Stylesheet -->
+    <link rel="stylesheet" href="../css/style.css">
+    <style>
+        .page-header {
+            background-color: transparent;
+            color: var(--primary-color);
+            padding: 40px 0;
+            text-align: center;
+            border-bottom: 1px solid #eee;
+        }
+
+        .page-content {
+            padding: 60px 0;
+            background-color: #f9f9f9;
+        }
+
+        .content-block {
+            background: #fff;
+            padding: 50px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            margin-bottom: 30px;
+        }
+
+        .content-block h2 {
+            color: var(--primary-color);
+            margin-bottom: 30px;
+            font-family: 'Playfair Display', serif;
+            border-bottom: 2px solid var(--secondary-color);
+            display: inline-block;
+            padding-bottom: 5px;
+        }
+
+        .content-block h3 {
+            color: var(--primary-color);
+            margin-bottom: 20px;
+            font-family: 'Playfair Display', serif;
+            font-size: 1.4rem;
+        }
+
+        .content-block p {
+            line-height: 1.8;
+            color: var(--text-dark);
+            margin-bottom: 20px;
+            font-size: 1.05rem;
+            text-align: justify;
+        }
+
+        .intro-text {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: var(--text-dark);
+            margin-bottom: 25px;
+        }
+
+        .highlight-box {
+            background: linear-gradient(135deg, var(--secondary-light), #f5f0d8);
+            padding: 25px;
+            border-radius: 10px;
+            border-left: 4px solid var(--secondary-color);
+            margin: 25px 0;
+        }
+
+        .highlight-box p {
+            margin: 0;
+            color: var(--primary-color);
+            font-weight: 500;
+        }
+
+        .fee-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 25px 0;
+            background: #fff;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 3px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .fee-table th {
+            background: linear-gradient(135deg, var(--primary-color), #8b1e24);
+            color: white;
+            padding: 15px 12px;
+            text-align: center;
+            font-weight: 600;
+            font-size: 0.95rem;
+        }
+
+        .fee-table td {
+            padding: 12px;
+            text-align: center;
+            border-bottom: 1px solid #eee;
+            color: var(--text-dark);
+        }
+
+        .fee-table tr:nth-child(even) {
+            background-color: #f8f9fa;
+        }
+
+        .fee-table tr:hover {
+            background-color: #e8f4f8;
+        }
+
+        .fee-table td:first-child {
+            text-align: center;
+            font-weight: 600;
+            color: var(--primary-color);
+        }
+
+        .fee-table td:nth-child(2) {
+            text-align: left;
+            font-weight: 500;
+        }
+
+        .payment-modes {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin: 25px 0;
+        }
+
+        .payment-card {
+            background: linear-gradient(135deg, #f8f9fa, #ffffff);
+            border: 1px solid #e9ecef;
+            border-radius: 10px;
+            padding: 20px;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .payment-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 20px rgba(101, 30, 33, 0.1);
+            border-color: var(--secondary-color);
+        }
+
+        .payment-card i {
+            font-size: 24px;
+            color: var(--primary-color);
+            margin-bottom: 10px;
+        }
+
+        .payment-card h4 {
+            color: var(--primary-color);
+            margin: 10px 0 5px 0;
+            font-size: 1.1rem;
+        }
+
+        .payment-card p {
+            margin: 0;
+            font-size: 0.9rem;
+            color: var(--text-dark);
+        }
+
+        .faq-item {
+            background: #f8f9fa;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 15px;
+            border-left: 4px solid var(--secondary-color);
+        }
+
+        .faq-question {
+            font-weight: 600;
+            color: var(--primary-color);
+            margin-bottom: 10px;
+            font-size: 1.1rem;
+        }
+
+        .faq-answer {
+            color: var(--text-dark);
+            margin: 0;
+            line-height: 1.6;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Header -->
+    <header class="header" id="header">
+        <!-- Top Bar (Gold) -->
+        <div class="top-bar">
+            <div class="container">
+                <div class="top-bar-left">
+                    <div class="top-bar-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        P B Road, Davanagere
+                    </div>
+                    <div class="top-bar-item">
+                        <i class="fas fa-phone-alt"></i>
+                        <a href="tel:8192233344">8192233344</a>
+                    </div>
+                    <div class="top-bar-item">
+                        <i class="fas fa-envelope"></i>
+                        <a href="mailto:info@gmls.ac.in">info@gmls.ac.in</a>
+                    </div>
+                </div>
+                <div class="top-bar-right">
+                    <a href="../index.html#gallery" class="top-bar-item">
+                        <i class="fas fa-images"></i> Gallery
+                    </a>
+                    <a href="#" class="login-btn">Login</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main Navigation (Maroon) -->
+        <nav class="nav-section">
+            <div class="container">
+                <div class="header-logo-wrap">
+                    <a href="../index.html">
+                        <img src="../assests/logo.png" alt="GM Legacy School Logo" class="logo">
+                    </a>
+                </div>
+
+                <div class="nav-content-wrap">
+                    <div class="nav-menu-wrapper">
+                        <div class="nav-row row-1">
+                            <div class="dropdown">
+                                <a href="#about" class="nav-link" id="aboutDropdown">About</a>
+                                <div class="dropdown-content">
+                                    <a href="../about/vision-mission.html">Vision, Mission & Objectives</a>
+                                    <a href="../about/founders-message.html">Founder's Message</a>
+                                    <a href="../about/principals-message.html">Principal's Message</a>
+                                    <a href="../about/philosophy-values.html">School Philosophy & Values</a>
+                                    <a href="../about/nep-alignment.html">NEP 2020 Alignment</a>
+                                    <a href="../about/school-history.html">School History / Legacy</a>
+                                    <a href="../about/governance.html">Governance & Management</a>
+                                    <a href="../about/public-disclosure.html">Mandatory Public Disclosure (CBSE)</a>
+                                </div>
+                            </div>
+                            <div class="dropdown">
+                                <a href="#admissions" class="nav-link" id="admissionsDropdown">Admissions</a>
+                                <div class="dropdown-content">
+                                    <a href="../admissions/overview.html">Admission Overview</a>
+                                    <a href="../admissions/eligibility.html">Eligibility Criteria</a>
+                                    <a href="../admissions/process.html">Admission Process</a>
+                                    <a href="../admissions/schedule.html">Admission Schedule</a>
+                                    <a href="../admissions/transfer.html">Transfer Admissions</a>
+                                    <a href="../admissions/faqs.html">FAQs on Admissions</a>
+                                </div>
+                            </div>
+                            <div class="dropdown">
+                                <a href="#programs" class="nav-link" id="boardDropdown">Board & Schools</a>
+                                <div class="dropdown-content">
+                                    <a href="../board/affiliation.html">CBSE Affiliation Details</a>
+                                    <a href="../board/nep-structure.html"
+                                        style="font-weight: 600; color: var(--primary-color);">NEP Structure of
+                                        School</a>
+                                    <a href="../board/nep-foundational.html" style="padding-left: 30px;">Foundational
+                                        Stage</a>
+                                    <a href="../board/nep-preparatory.html" style="padding-left: 30px;">Preparatory
+                                        Stage</a>
+                                    <a href="../board/nep-middle.html" style="padding-left: 30px;">Middle School</a>
+                                    <a href="../board/nep-secondary.html" style="padding-left: 30px;">Secondary School</a>
+                                    <a href="../board/academic-calendar.html">Academic Calendar</a>
+                                    <a href="../board/examination-assessment.html">Examination & Assessment System</a>
+                                    <a href="../board/policies-guidelines.html">Policies & Guidelines</a>
+                                </div>
+                            </div>
+                            <div class="dropdown">
+                                <a href="#curriculum" class="nav-link" id="curriculumDropdown">Curriculum</a>
+                                <div class="dropdown-content">
+                                    <a href="../curriculum/nep-framework.html">NEP-Based Curriculum Framework</a>
+                                    <a href="../curriculum/foundational-curriculum.html">Foundational Stage Curriculum</a>
+                                    <a href="../curriculum/primary-curriculum.html">Primary Curriculum</a>
+                                    <a href="../curriculum/middle-curriculum.html">Middle School Curriculum</a>
+                                    <a href="../curriculum/secondary-curriculum.html">Secondary Curriculum</a>
+                                    <a href="../curriculum/skill-based-education.html">Skill-Based Education</a>
+                                    <a href="../curriculum/value-education.html">Value Education & Life Skills</a>
+                                </div>
+                            </div>
+                            <div class="dropdown">
+                                <a href="#teaching" class="nav-link">Teaching and Learning</a>
+                                <div class="dropdown-content">
+                                    <a href="../teaching/methods.html">Teaching and Learning Methods</a>
+                                </div>
+                            </div>
+                            <div class="dropdown">
+                                <a href="#extracurricular" class="nav-link">Co and Extra Curricular</a>
+                                <div class="dropdown-content">
+                                    <a href="../extracurricular/activities.html">Co-Curricular and Extra-Curricular Activities</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="nav-row row-2">
+                            <a href="../facilities/index.html" class="nav-link">Facilities</a>
+                            <a href="index.html" class="nav-link active">Fee</a>
+                            <a href="../faculty/index.html" class="nav-link">Faculty</a>
+                            <a href="../residential/index.html" class="nav-link">Residential Facilities</a>
+                            <a href="../campus/index.html" class="nav-link">Campus</a>
+                            <a href="#disclosures" class="nav-link">Mandatory Disclosures</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="hamburger" id="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Page Header -->
+        <section class="page-header">
+            <div class="container">
+                <div class="page-header-content">
+                    <h1>Fee Structure – GM Legacy School</h1>
+                    <p style="margin-top: 15px; font-style: italic; color: white;">(All fees are subject to revision by the Management and approval of competent authorities.)</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Page Content -->
+        <section class="page-content">
+            <div class="container">
+                <!-- Fee Structure Table -->
+                <div class="content-block">
+                    <h2>Tentative Fee Structure Table</h2>
+                    <div style="overflow-x: auto;">
+                        <table class="fee-table">
+                            <thead>
+                                <tr>
+                                    <th>Sl. No.</th>
+                                    <th>Class (CBSE Nomenclature)</th>
+                                    <th>Tuition Fee</th>
+                                    <th>Development Fee</th>
+                                    <th>Activity Fee</th>
+                                    <th>Lab Fee</th>
+                                    <th>Other Charges</th>
+                                    <th>Total Annual Fee (Rs.)</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr><td>1</td><td>Pre-Nursery</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+                                <tr><td>2</td><td>Nursery</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+                                <tr><td>3</td><td>LKG</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+                                <tr><td>4</td><td>UKG</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+                                <tr><td>5</td><td>Class I</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+                                <tr><td>6</td><td>Class II</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+                                <tr><td>7</td><td>Class III</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+                                <tr><td>8</td><td>Class IV</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+                                <tr><td>9</td><td>Class V</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+                                <tr><td>10</td><td>Class VI</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+                                <tr><td>11</td><td>Class VII</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+                                <tr><td>12</td><td>Class VIII</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+                                <tr><td>13</td><td>Class IX</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+                                <tr><td>14</td><td>Class X</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+                                <tr><td>15</td><td>Class XI – Science</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+                                <tr><td>16</td><td>Class XI – Commerce</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+                                <tr><td>17</td><td>Class XI – Humanities</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+                                <tr><td>18</td><td>Class XII – Science</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+                                <tr><td>19</td><td>Class XII – Commerce</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+                                <tr><td>20</td><td>Class XII – Humanities</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <p style="font-style: italic; color: var(--text-dark); margin-top: 15px;">(Columns 3 to 7 intentionally left blank for school-specific entry, as requested.)</p>
+                </div>
+
+                <!-- Payment Schedule -->
+                <div class="content-block">
+                    <h2>Payment Schedule</h2>
+                    <p>The school follows a structured and transparent payment schedule.</p>
+                    <p>• Fees may be payable in one annual instalment or in two to four term-wise instalments, as notified.</p>
+                    
+                    <h3>Typical instalment schedule:</h3>
+                    <p>• <strong>First Instalment:</strong> At the time of admission / June</p>
+                    <p>• <strong>Second Instalment:</strong> September</p>
+                    <p>• <strong>Third Instalment:</strong> December</p>
+                    <p>• <strong>Fourth Instalment (if applicable):</strong> February</p>
+                    
+                    <p>• Due dates will be communicated through circulars and the school portal.</p>
+                    <p>• Late payment may attract late fees as per school rules.</p>
+                </div>
+
+                <!-- Mode of Payment -->
+                <div class="content-block">
+                    <h2>Mode of Payment</h2>
+                    <p>Fees can be paid through the following modes:</p>
+                    
+                    <div class="payment-modes">
+                        <div class="payment-card">
+                            <i class="fas fa-laptop"></i>
+                            <h4>Online Payment</h4>
+                            <p>School Portal / Payment Gateway</p>
+                        </div>
+                        
+                        <div class="payment-card">
+                            <i class="fas fa-mobile-alt"></i>
+                            <h4>UPI / Net Banking</h4>
+                            <p>Quick and secure digital payments</p>
+                        </div>
+                        
+                        <div class="payment-card">
+                            <i class="fas fa-file-invoice"></i>
+                            <h4>Demand Draft</h4>
+                            <p>In favour of GM Legacy School</p>
+                        </div>
+                        
+                        <div class="payment-card">
+                            <i class="fas fa-university"></i>
+                            <h4>Cash / Card</h4>
+                            <p>At School Office (where permitted)</p>
+                        </div>
+                    </div>
+                    
+                    <p>Receipts are issued for all payments, and parents are advised to retain them carefully.</p>
+                </div>
+
+                <!-- Fee Rules & Refund Policy -->
+                <div class="content-block">
+                    <h2>Fee Rules & Refund Policy</h2>
+                    <p>• Fees once paid are non-transferable.</p>
+                    <p>• Admission fee and registration fee are non-refundable.</p>
+                    <p>• In case of withdrawal before the commencement of the academic session, refund will be processed as per school refund rules.</p>
+                    <p>• No refund is admissible after the academic session has commenced, except in special cases approved by Management.</p>
+                    <p>• Fee revision, if any, will be notified in advance.</p>
+                </div>
+
+                <!-- Transport Fee -->
+                <div class="content-block">
+                    <h2>Transport Fee</h2>
+                    <p>• Transport fee is separate from school fee.</p>
+                    <p>• Fee depends on the distance and route of the student.</p>
+                    <p>• Transport fee is payable on a term-wise or annual basis.</p>
+                    <p>• Transport facility is optional and subject to availability of seats in buses.</p>
+                    <p>• Details of route-wise transport fees will be provided at the time of admission.</p>
+                </div>
+
+                <!-- Hostel Fee -->
+                <div class="content-block">
+                    <h2>Hostel Fee (If Applicable)</h2>
+                    <p>For students availing residential facilities:</p>
+                    
+                    <h3>Hostel fee generally includes:</h3>
+                    <p>• Boarding and lodging</p>
+                    <p>• Food and dining charges</p>
+                    <p>• Electricity and water</p>
+                    <p>• Medical and supervision charges</p>
+                    <p>• Basic laundry and housekeeping</p>
+                    
+                    <p>Hostel fee is payable term-wise or annually, as notified separately.</p>
+                </div>
+
+                <!-- Scholarships & Concessions -->
+                <div class="content-block">
+                    <h2>Scholarships & Concessions</h2>
+                    <p>GM Legacy School may offer:</p>
+                    <p>• Merit-based scholarships for academically outstanding students</p>
+                    <p>• Need-based concessions in deserving cases</p>
+                    <p>• Concessions for siblings (as per policy)</p>
+                    <p>• Special scholarships as approved by the Management</p>
+                    
+                    <p>All scholarships and concessions are granted strictly as per school policy and are reviewed annually.</p>
+                </div>
+
+                <!-- Fee FAQs -->
+                <div class="content-block">
+                    <h2>Fee FAQs</h2>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">1. Is there any donation or capitation fee?</div>
+                        <div class="faq-answer">No. The school strictly follows no-donation, no-capitation policy.</div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">2. Can fees be paid in instalments?</div>
+                        <div class="faq-answer">Yes. Fees may be paid in term-wise instalments as notified.</div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">3. What happens if fees are paid late?</div>
+                        <div class="faq-answer">Late payment may attract a late fee and may lead to withholding of report cards or hall tickets.</div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">4. Are books, uniform, and transport included in school fee?</div>
+                        <div class="faq-answer">No. These are charged separately.</div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">5. Is fee revision done every year?</div>
+                        <div class="faq-answer">Fee revision, if any, is done only after approval of Management and as per government norms.</div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">6. Can I change transport route during the year?</div>
+                        <div class="faq-answer">Route changes are subject to availability and approval.</div>
+                    </div>
+                </div>
+
+                <!-- Our Commitment -->
+                <div class="content-block">
+                    <h2>Our Commitment</h2>
+                    <p>At GM Legacy School, our fee policy ensures:</p>
+                    <p>• Transparency and fairness</p>
+                    <p>• Clear communication with parents</p>
+                    <p>• Compliance with CBSE and Government regulations</p>
+                    <p>• Responsible and ethical financial management</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer" id="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <img src="../assests/logo.png" alt="GM Legacy School Logo" class="footer-logo">
+                    <p>GM Legacy School is dedicated to providing quality education and nurturing young minds to become
+                        responsible citizens and future leaders.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <a href="../index.html#about">About</a>
+                    <a href="../index.html#admissions">Admissions</a>
+                    <a href="../index.html#curriculum">Curriculum</a>
+                    <a href="../index.html#facilities">Facilities</a>
+                    <a href="../index.html#faculty">Faculty</a>
+                    <a href="../index.html#disclosures">Mandatory Disclosures</a>
+                </div>
+                <div class="footer-section">
+                    <h3>Contact Us</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> P B Road, Davanagere-577 006, Karnataka</p>
+                    <p><i class="fas fa-phone-alt"></i> +91 XXXXXXXXXX</p>
+                    <p><i class="fas fa-envelope"></i> info@gmls.ac.in</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Follow Us</h3>
+                    <p>
+                        <a href="#"><i class="fab fa-facebook-f"></i> Facebook</a>
+                    </p>
+                    <p>
+                        <a href="#"><i class="fab fa-instagram"></i> Instagram</a>
+                    </p>
+                    <p>
+                        <a href="#"><i class="fab fa-youtube"></i> YouTube</a>
+                    </p>
+                    <p>
+                        <a href="#"><i class="fab fa-twitter"></i> Twitter</a>
+                    </p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 GM Legacy School. All Rights Reserved. | Designed with <i class="fas fa-heart"
+                        style="color: #e9c66f;"></i></p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Main JavaScript -->
+    <script src="../js/main.js"></script>
+</body>
+
+</html>

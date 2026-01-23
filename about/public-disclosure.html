@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mandatory Public Disclosure (CBSE) | GM Legacy School</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="../assests/logo.png">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Main Stylesheet -->
+    <link rel="stylesheet" href="../css/style.css">
+    <style>
+        .page-header {
+            background-color: transparent;
+            color: var(--primary-color);
+            padding: 40px 0;
+            text-align: center;
+            border-bottom: 1px solid #eee;
+        }
+
+        .page-content {
+            padding: 60px 0;
+            background-color: #f9f9f9;
+        }
+
+        .content-block {
+            background: #fff;
+            padding: 50px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            margin-bottom: 30px;
+        }
+
+        .content-block h2 {
+            color: var(--primary-color);
+            margin-bottom: 30px;
+            font-family: 'Playfair Display', serif;
+            border-bottom: 2px solid var(--secondary-color);
+            display: inline-block;
+            padding-bottom: 5px;
+        }
+
+        .content-block h3 {
+            color: var(--primary-color);
+            margin-top: 40px;
+            margin-bottom: 20px;
+            font-size: 1.5rem;
+            font-family: 'Playfair Display', serif;
+        }
+
+        .disclosure-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 40px;
+            font-size: 0.95rem;
+            border: 1px solid #eee;
+        }
+
+        .disclosure-table th,
+        .disclosure-table td {
+            padding: 12px 20px;
+            text-align: left;
+            border: 1px solid #eee;
+        }
+
+        .disclosure-table th {
+            background-color: var(--primary-color);
+            color: var(--white);
+            font-family: 'Playfair Display', serif;
+            font-weight: 600;
+        }
+
+        .disclosure-table tr:nth-child(even) td {
+            background-color: #fafafa;
+        }
+
+        .disclosure-table tr:hover td {
+            background-color: #f5f5f5;
+        }
+
+        .pdf-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .pdf-item {
+            display: flex;
+            align-items: center;
+            background: #fbfbfb;
+            padding: 15px 20px;
+            border-radius: 8px;
+            border: 1px solid #eee;
+            transition: var(--transition);
+            text-decoration: none;
+            color: var(--text-color);
+        }
+
+        .pdf-item:hover {
+            border-color: var(--secondary-color);
+            background: #fff;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        .pdf-item i {
+            color: #d32f2f;
+            /* PDF Red */
+            font-size: 1.5rem;
+            margin-right: 15px;
+        }
+
+        .pdf-item span {
+            font-weight: 500;
+            font-size: 0.9rem;
+        }
+
+        .info-note {
+            background-color: #fdfae6;
+            border-left: 4px solid var(--secondary-color);
+            padding: 20px;
+            margin-top: 40px;
+            font-size: 0.95rem;
+            color: #666;
+        }
+
+        @media (max-width: 768px) {
+            .content-block {
+                padding: 30px 20px;
+            }
+
+            .disclosure-table {
+                display: block;
+                overflow-x: auto;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- ===== HEADER ===== -->
+    <header class="header" id="header">
+        <!-- Top Bar (Gold) -->
+        <div class="top-bar">
+            <div class="container">
+                <div class="top-bar-left">
+                    <div class="top-bar-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        P B Road, Davanagere
+                    </div>
+                    <div class="top-bar-item">
+                        <i class="fas fa-phone-alt"></i>
+                        <a href="tel:8192233344">8192233344</a>
+                    </div>
+                    <div class="top-bar-item">
+                        <i class="fas fa-envelope"></i>
+                        <a href="mailto:info@gmls.ac.in">info@gmls.ac.in</a>
+                    </div>
+                </div>
+                <div class="top-bar-right">
+                    <a href="../index.html#gallery" class="top-bar-item">
+                        <i class="fas fa-images"></i> Gallery
+                    </a>
+                    <a href="#" class="login-btn">Login</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main Navigation (Maroon) -->
+        <nav class="nav-section">
+            <div class="container">
+                <div class="header-logo-wrap">
+                    <a href="../index.html">
+                        <img src="../assests/logo.png" alt="GM Legacy School Logo" class="logo">
+                    </a>
+                </div>
+
+                <div class="nav-content-wrap">
+                    <div class="nav-menu-wrapper">
+                        <div class="nav-row row-1">
+                            <div class="dropdown">
+                                <a href="#about" class="nav-link" id="aboutDropdown">About</a>
+                                <div class="dropdown-content">
+                                    <a href="../about/vision-mission.html">Vision, Mission & Objectives</a>
+                                    <a href="../about/founders-message.html">Founder’s Message</a>
+                                    <a href="../about/principals-message.html">Principal’s Message</a>
+                                    <a href="../about/philosophy-values.html">School Philosophy & Values</a>
+                                    <a href="../about/nep-alignment.html">NEP 2020 Alignment</a>
+                                    <a href="../about/school-history.html">School History / Legacy</a>
+                                    <a href="../about/governance.html">Governance & Management</a>
+                                    <a href="../about/public-disclosure.html">Mandatory Public Disclosure (CBSE)</a>
+                                </div>
+                            </div>
+                            <div class="dropdown">
+                                <a href="#admissions" class="nav-link" id="admissionsDropdown">Admissions</a>
+                                <div class="dropdown-content">
+                                    <a href="../admissions/overview.html">Admission Overview</a>
+                                    <a href="../admissions/eligibility.html">Eligibility Criteria</a>
+                                    <a href="../admissions/process.html">Admission Process</a>
+                                    <a href="../admissions/schedule.html">Admission Schedule</a>
+                                    <a href="../admissions/transfer.html">Transfer Admissions</a>
+                                    <a href="../admissions/faqs.html">FAQs on Admissions</a>
+                                </div>
+                            </div>
+                            <div class="dropdown">
+                                <a href="#board" class="nav-link" id="boardDropdown">Board & Schools</a>
+                                <div class="dropdown-content">
+                                    <a href="../board/affiliation.html">CBSE Affiliation Details</a>
+                                    <a href="../board/nep-structure.html" style="font-weight: 600; color: var(--primary-color);">NEP Structure of School</a>
+                                    <a href="../board/nep-foundational.html" style="padding-left: 30px;">Foundational Stage</a>
+                                    <a href="../board/nep-preparatory.html" style="padding-left: 30px;">Preparatory Stage</a>
+                                    <a href="../board/nep-middle.html" style="padding-left: 30px;">Middle School</a>
+                                    <a href="../board/nep-secondary.html" style="padding-left: 30px;">Secondary School</a>
+                                    <a href="../board/academic-calendar.html">Academic Calendar</a>
+                                    <a href="../board/examination-assessment.html">Examination & Assessment System</a>
+                                    <a href="../board/policies-guidelines.html">Policies & Guidelines</a>
+                                </div>
+                            </div>
+                            <div class="dropdown">
+                                <a href="#curriculum" class="nav-link" id="curriculumDropdown">Curriculum</a>
+                                <div class="dropdown-content">
+                                    <a href="../curriculum/nep-framework.html">NEP-Based Curriculum Framework</a>
+                                    <a href="../curriculum/foundational-curriculum.html">Foundational Stage Curriculum</a>
+                                    <a href="../curriculum/primary-curriculum.html">Primary Curriculum</a>
+                                    <a href="../curriculum/middle-curriculum.html">Middle School Curriculum</a>
+                                    <a href="../curriculum/secondary-curriculum.html">Secondary Curriculum</a>
+                                    <a href="../curriculum/skill-based-education.html">Skill-Based Education</a>
+                                    <a href="../curriculum/value-education.html">Value Education & Life Skills</a>
+                                </div>
+                            </div>
+                            <a href="../index.html#teaching" class="nav-link">Teaching and Learning</a>
+                            <a href="../index.html#extracurricular" class="nav-link">Co and Extra Curricular</a>
+                        </div>
+                        <div class="nav-row row-2">
+                            <a href="../index.html#facilities" class="nav-link">Facilities</a>
+                            <a href="../index.html#fee" class="nav-link">Fee</a>
+                            <a href="../index.html#faculty" class="nav-link">Faculty</a>
+                            <a href="../index.html#residential" class="nav-link">Residential Facilities</a>
+                            <a href="../index.html#campus" class="nav-link">Campus</a>
+                            <a href="../index.html#disclosures" class="nav-link">Mandatory Disclosures</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="hamburger" id="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- ===== PAGE HEADER ===== -->
+    <section class="page-header">
+        <div class="container">
+            <h1>Mandatory Public Disclosure</h1>
+        </div>
+    </section>
+
+    <!-- ===== MAIN CONTENT ===== -->
+    <section class="page-content">
+        <div class="container">
+            <div class="content-block">
+                <h2>General Information</h2>
+                <table class="disclosure-table">
+                    <thead>
+                        <tr>
+                            <th width="10%">Sl. No.</th>
+                            <th width="40%">To Be Disclosed</th>
+                            <th width="50%">Disclosure</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>Name of the School</td>
+                            <td>GM Legacy School</td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>Complete Address with PIN Code</td>
+                            <td>[To be filled]</td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>Phone Number</td>
+                            <td>[To be filled]</td>
+                        </tr>
+                        <tr>
+                            <td>4</td>
+                            <td>Email ID</td>
+                            <td>[To be filled]</td>
+                        </tr>
+                        <tr>
+                            <td>5</td>
+                            <td>Website</td>
+                            <td>[To be filled]</td>
+                        </tr>
+                        <tr>
+                            <td>6</td>
+                            <td>Year of Establishment of School</td>
+                            <td>2026</td>
+                        </tr>
+                        <tr>
+                            <td>7</td>
+                            <td>Name of the Trust / Society</td>
+                            <td>Srishyla Education Trust, Davanagere</td>
+                        </tr>
+                        <tr>
+                            <td>8</td>
+                            <td>Name of the Chairperson</td>
+                            <td>[To be filled]</td>
+                        </tr>
+                        <tr>
+                            <td>9</td>
+                            <td>Name of the Secretary / Manager</td>
+                            <td>Sri. GM Lingaraju</td>
+                        </tr>
+                        <tr>
+                            <td>10</td>
+                            <td>Name of the Principal</td>
+                            <td>[To be filled]</td>
+                        </tr>
+                        <tr>
+                            <td>11</td>
+                            <td>School Affiliation Board</td>
+                            <td>Central Board of Secondary Education (CBSE)</td>
+                        </tr>
+                        <tr>
+                            <td>12</td>
+                            <td>CBSE Affiliation Number</td>
+                            <td>[To be filled after affiliation]</td>
+                        </tr>
+                        <tr>
+                            <td>13</td>
+                            <td>Affiliation Validity Period</td>
+                            <td>[To be filled]</td>
+                        </tr>
+                        <tr>
+                            <td>14</td>
+                            <td>Status of Affiliation</td>
+                            <td>Provisional / Regular</td>
+                        </tr>
+                        <tr>
+                            <td>15</td>
+                            <td>UDISE Number</td>
+                            <td>[To be filled]</td>
+                        </tr>
+                        <tr>
+                            <td>16</td>
+                            <td>Name of the State / UT</td>
+                            <td>Karnataka</td>
+                        </tr>
+                        <tr>
+                            <td>17</td>
+                            <td>District</td>
+                            <td>Davanagere</td>
+                        </tr>
+                        <tr>
+                            <td>18</td>
+                            <td>Name of the Educational Officer</td>
+                            <td>[To be filled]</td>
+                        </tr>
+                        <tr>
+                            <td>19</td>
+                            <td>Land Area of the School (in sq. mtrs)</td>
+                            <td>[To be filled]</td>
+                        </tr>
+                        <tr>
+                            <td>20</td>
+                            <td>Ownership of Land</td>
+                            <td>Owned / Leased</td>
+                        </tr>
+                        <tr>
+                            <td>21</td>
+                            <td>Total Built-up Area</td>
+                            <td>[To be filled]</td>
+                        </tr>
+                        <tr>
+                            <td>22</td>
+                            <td>Number of Classrooms</td>
+                            <td>[To be filled]</td>
+                        </tr>
+                        <tr>
+                            <td>23</td>
+                            <td>Number of Laboratories</td>
+                            <td>[To be filled]</td>
+                        </tr>
+                        <tr>
+                            <td>24</td>
+                            <td>Internet Facility</td>
+                            <td>Yes</td>
+                        </tr>
+                        <tr>
+                            <td>25</td>
+                            <td>Drinking Water Facility</td>
+                            <td>Yes</td>
+                        </tr>
+                        <tr>
+                            <td>26</td>
+                            <td>Toilets for Boys and Girls</td>
+                            <td>Yes</td>
+                        </tr>
+                        <tr>
+                            <td>27</td>
+                            <td>Barrier-Free Access</td>
+                            <td>Yes / Under Development</td>
+                        </tr>
+                        <tr>
+                            <td>28</td>
+                            <td>Fire Safety Certificate</td>
+                            <td>Available / To be Obtained</td>
+                        </tr>
+                        <tr>
+                            <td>29</td>
+                            <td>Building Safety Certificate</td>
+                            <td>Available / To be Obtained</td>
+                        </tr>
+                        <tr>
+                            <td>30</td>
+                            <td>Water, Health & Sanitation Certificate</td>
+                            <td>Available / To be Obtained</td>
+                        </tr>
+                        <tr>
+                            <td>31</td>
+                            <td>Transport Facility</td>
+                            <td>Yes / No</td>
+                        </tr>
+                        <tr>
+                            <td>32</td>
+                            <td>Hostel Facility</td>
+                            <td>Yes / No</td>
+                        </tr>
+                        <tr>
+                            <td>33</td>
+                            <td>Library Facility</td>
+                            <td>Yes</td>
+                        </tr>
+                        <tr>
+                            <td>34</td>
+                            <td>Number of Teaching Staff</td>
+                            <td>[To be filled]</td>
+                        </tr>
+                        <tr>
+                            <td>35</td>
+                            <td>Number of Non-Teaching Staff</td>
+                            <td>[To be filled]</td>
+                        </tr>
+                        <tr>
+                            <td>36</td>
+                            <td>Qualifications of Teachers</td>
+                            <td>As per CBSE Norms</td>
+                        </tr>
+                        <tr>
+                            <td>37</td>
+                            <td>Student–Teacher Ratio</td>
+                            <td>As per CBSE Norms</td>
+                        </tr>
+                        <tr>
+                            <td>38</td>
+                            <td>Mode of Payment of Fees</td>
+                            <td>Online / Bank / Cash</td>
+                        </tr>
+                        <tr>
+                            <td>39</td>
+                            <td>Fee Structure</td>
+                            <td>Uploaded Separately</td>
+                        </tr>
+                        <tr>
+                            <td>40</td>
+                            <td>Academic Session Period</td>
+                            <td>June – March</td>
+                        </tr>
+                        <tr>
+                            <td>41</td>
+                            <td>Admission Process & Criteria</td>
+                            <td>As per School Policy</td>
+                        </tr>
+                        <tr>
+                            <td>42</td>
+                            <td>School Timing</td>
+                            <td>[To be filled]</td>
+                        </tr>
+                        <tr>
+                            <td>43</td>
+                            <td>List of School Managing Committee Members</td>
+                            <td>Uploaded Separately</td>
+                        </tr>
+                        <tr>
+                            <td>44</td>
+                            <td>List of Governing Council Members</td>
+                            <td>Uploaded Separately</td>
+                        </tr>
+                        <tr>
+                            <td>45</td>
+                            <td>PTA Details</td>
+                            <td>Available</td>
+                        </tr>
+                        <tr>
+                            <td>46</td>
+                            <td>Mandatory Certificates (PDF Uploads)</td>
+                            <td>Uploaded</td>
+                        </tr>
+                        <tr>
+                            <td>47</td>
+                            <td>Annual Academic Calendar</td>
+                            <td>Uploaded</td>
+                        </tr>
+                        <tr>
+                            <td>48</td>
+                            <td>Transfer Certificate Format</td>
+                            <td>As per CBSE</td>
+                        </tr>
+                        <tr>
+                            <td>49</td>
+                            <td>Result & Academic Performance</td>
+                            <td>To be Updated Annually</td>
+                        </tr>
+                        <tr>
+                            <td>50</td>
+                            <td>Grievance Redressal Mechanism</td>
+                            <td>Available</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h3>Documents and Information (PDF)</h3>
+                <div class="pdf-grid">
+                    <a href="#" class="pdf-item"><i class="far fa-file-pdf"></i><span>CBSE Affiliation Letter</span></a>
+                    <a href="#" class="pdf-item"><i class="far fa-file-pdf"></i><span>Trust Registration
+                            Certificate</span></a>
+                    <a href="#" class="pdf-item"><i class="far fa-file-pdf"></i><span>Land Ownership / Lease
+                            Deed</span></a>
+                    <a href="#" class="pdf-item"><i class="far fa-file-pdf"></i><span>Building Safety
+                            Certificate</span></a>
+                    <a href="#" class="pdf-item"><i class="far fa-file-pdf"></i><span>Fire Safety Certificate</span></a>
+                    <a href="#" class="pdf-item"><i class="far fa-file-pdf"></i><span>Water, Health & Sanitation
+                            Certificate</span></a>
+                    <a href="#" class="pdf-item"><i class="far fa-file-pdf"></i><span>Recognition Certificate from
+                            State</span></a>
+                    <a href="#" class="pdf-item"><i class="far fa-file-pdf"></i><span>Fee Structure</span></a>
+                    <a href="#" class="pdf-item"><i class="far fa-file-pdf"></i><span>School Managing Committee
+                            List</span></a>
+                    <a href="#" class="pdf-item"><i class="far fa-file-pdf"></i><span>Governing Council List</span></a>
+                    <a href="#" class="pdf-item"><i class="far fa-file-pdf"></i><span>Annual Academic
+                            Calendar</span></a>
+                </div>
+
+                <div class="info-note">
+                    <strong>Note:</strong> This page is updated annually in accordance with CBSE regulations. All
+                    information provided is true to the best of our knowledge.
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="footer" id="footer">
+        <div class="container">
+            <div class="footer-content">
+                <!-- Same Footer for Consistency -->
+                <div class="footer-section">
+                    <img src="../assests/logo.png" alt="GM Legacy School Logo" class="footer-logo">
+                    <p>GM Legacy School is dedicated to providing quality education and nurturing young minds to become
+                        responsible citizens.</p>
+                </div>
+                <!-- ... other footer sections ... -->
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <a href="../index.html#about">About</a>
+                    <a href="../index.html#admissions">Admissions</a>
+                    <a href="../index.html#curriculum">Curriculum</a>
+                    <a href="../index.html#facilities">Facilities</a>
+                    <a href="../index.html#faculty">Faculty</a>
+                    <a href="public-disclosure.html">Mandatory Disclosures</a>
+                </div>
+                <!-- ... footer continues ... -->
+                <div class="footer-section">
+                    <h3>Contact Us</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> P B Road, Davanagere-577 006</p>
+                    <p><i class="fas fa-phone-alt"></i> +91 XXXXXXXXXX</p>
+                    <p><i class="fas fa-envelope"></i> info@gmls.ac.in</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Follow Us</h3>
+                    <p><a href="#"><i class="fab fa-facebook-f"></i> Facebook</a></p>
+                    <p><a href="#"><i class="fab fa-instagram"></i> Instagram</a></p>
+                    <p><a href="#"><i class="fab fa-youtube"></i> YouTube</a></p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 GM Legacy School. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/main.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,1054 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Secondary Curriculum | GM Legacy School</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="../assests/logo.png">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Main Stylesheet -->
+    <link rel="stylesheet" href="../css/style.css">
+    <style>
+        .page-header {
+            background-color: transparent;
+            color: var(--primary-color);
+            padding: 40px 0;
+            text-align: center;
+            border-bottom: 1px solid #eee;
+        }
+
+        .page-content {
+            padding: 60px 0;
+            background-color: #f9f9f9;
+        }
+
+        .content-block {
+            background: #fff;
+            padding: 50px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            margin-bottom: 30px;
+        }
+
+        .content-block h2 {
+            color: var(--primary-color);
+            margin-bottom: 30px;
+            font-family: 'Playfair Display', serif;
+            border-bottom: 2px solid var(--secondary-color);
+            display: inline-block;
+            padding-bottom: 5px;
+        }
+
+        .content-block h3 {
+            color: var(--primary-color);
+            margin-bottom: 20px;
+            font-family: 'Playfair Display', serif;
+            font-size: 1.4rem;
+        }
+
+        .content-block p {
+            line-height: 1.8;
+            color: var(--text-dark);
+            margin-bottom: 20px;
+            font-size: 1.05rem;
+            text-align: justify;
+        }
+
+        .intro-text {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: var(--text-dark);
+            margin-bottom: 25px;
+        }
+
+        .highlight-box {
+            background: linear-gradient(135deg, var(--secondary-light), #f5f0d8);
+            padding: 25px;
+            border-radius: 10px;
+            border-left: 4px solid var(--secondary-color);
+            margin: 25px 0;
+        }
+
+        .highlight-box p {
+            margin: 0;
+            color: var(--primary-color);
+            font-weight: 500;
+        }
+
+        .classes-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+
+        .class-card {
+            background: linear-gradient(135deg, var(--primary-color), var(--primary-light));
+            color: var(--white);
+            padding: 30px;
+            border-radius: 15px;
+            text-align: center;
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .class-card::before {
+            content: '';
+            position: absolute;
+            top: -20px;
+            right: -20px;
+            width: 60px;
+            height: 60px;
+            background: rgba(233, 198, 111, 0.2);
+            border-radius: 50%;
+        }
+
+        .class-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(101, 30, 33, 0.3);
+        }
+
+        .class-card h4 {
+            color: var(--secondary-color);
+            margin: 0 0 10px 0;
+            font-size: 1.2rem;
+            font-weight: 600;
+        }
+
+        .class-card p {
+            margin: 0;
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+
+        .aims-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin: 30px 0;
+        }
+
+        .aim-card {
+            background: var(--gray-light);
+            padding: 25px;
+            border-radius: 15px;
+            border-left: 4px solid var(--secondary-color);
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .aim-card:hover {
+            background: var(--secondary-light);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        .aim-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, var(--primary-color), var(--primary-light));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            color: var(--white);
+            flex-shrink: 0;
+        }
+
+        .aim-content h4 {
+            color: var(--primary-color);
+            margin-bottom: 8px;
+            font-size: 1.1rem;
+            font-weight: 600;
+        }
+
+        .aim-content p {
+            color: var(--text-dark);
+            margin: 0;
+            line-height: 1.5;
+            font-size: 0.95rem;
+        }
+
+        .curriculum-structure {
+            margin: 40px 0;
+        }
+
+        .level-section {
+            background: var(--white);
+            border: 2px solid #f0f0f0;
+            border-radius: 15px;
+            padding: 30px;
+            margin-bottom: 30px;
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .level-section:hover {
+            border-color: var(--secondary-color);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .level-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 100%;
+            background: var(--secondary-color);
+        }
+
+        .level-header {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            margin-bottom: 25px;
+        }
+
+        .level-icon {
+            width: 60px;
+            height: 60px;
+            background: var(--primary-color);
+            color: var(--white);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 1.2rem;
+        }
+
+        .level-header h4 {
+            color: var(--primary-color);
+            margin: 0;
+            font-size: 1.4rem;
+            font-weight: 600;
+        }
+
+        .subjects-list {
+            list-style: none;
+            padding: 0;
+            margin: 20px 0;
+        }
+
+        .subjects-list li {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            margin-bottom: 12px;
+            color: var(--text-dark);
+            line-height: 1.6;
+        }
+
+        .subjects-list li i {
+            color: var(--secondary-color);
+            font-size: 0.8rem;
+            margin-top: 4px;
+            flex-shrink: 0;
+        }
+
+        .streams-section {
+            background: linear-gradient(135deg, var(--secondary-color), var(--secondary-light));
+            color: var(--primary-color);
+            padding: 40px;
+            border-radius: 15px;
+            margin: 40px 0;
+        }
+
+        .streams-section h3 {
+            color: var(--primary-color);
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        .streams-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            margin-top: 25px;
+        }
+
+        .stream-card {
+            background: rgba(255, 255, 255, 0.3);
+            padding: 25px;
+            border-radius: 15px;
+            transition: var(--transition);
+        }
+
+        .stream-card:hover {
+            background: rgba(255, 255, 255, 0.5);
+            transform: translateY(-3px);
+        }
+
+        .stream-card h4 {
+            color: var(--primary-color);
+            margin-bottom: 15px;
+            font-size: 1.2rem;
+            font-weight: 600;
+            text-align: center;
+        }
+
+        .stream-subjects {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .stream-subjects li {
+            padding: 8px 0;
+            border-bottom: 1px solid rgba(101, 30, 33, 0.2);
+            color: var(--primary-color);
+            font-weight: 500;
+        }
+
+        .stream-subjects li:last-child {
+            border-bottom: none;
+        }
+
+        .approach-section {
+            background: var(--gray-light);
+            padding: 40px;
+            border-radius: 15px;
+            margin: 40px 0;
+        }
+
+        .approach-points {
+            list-style: none;
+            padding: 0;
+            margin: 25px 0;
+        }
+
+        .approach-points li {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 15px;
+            padding: 15px;
+            background: var(--white);
+            border-radius: 8px;
+            transition: var(--transition);
+        }
+
+        .approach-points li:hover {
+            background: var(--secondary-light);
+            transform: translateX(5px);
+        }
+
+        .approach-points li i {
+            color: var(--primary-color);
+            font-size: 1.5rem;
+            width: 30px;
+            text-align: center;
+        }
+
+        .approach-points li span {
+            color: var(--text-dark);
+            font-weight: 500;
+        }
+
+        .assessment-section {
+            background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
+            color: var(--white);
+            padding: 40px;
+            border-radius: 15px;
+            margin: 40px 0;
+        }
+
+        .assessment-section h3 {
+            color: var(--secondary-color);
+            margin-bottom: 25px;
+        }
+
+        .assessment-points {
+            list-style: none;
+            padding: 0;
+            margin: 25px 0;
+        }
+
+        .assessment-points li {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 15px;
+            padding: 15px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
+            transition: var(--transition);
+        }
+
+        .assessment-points li:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: translateX(5px);
+        }
+
+        .assessment-points li i {
+            color: var(--secondary-color);
+            font-size: 1.5rem;
+            width: 30px;
+            text-align: center;
+        }
+
+        .assessment-points li span {
+            color: rgba(255, 255, 255, 0.9);
+            font-weight: 500;
+        }
+
+        .outcomes-section {
+            background: var(--white);
+            padding: 40px;
+            border-radius: 15px;
+            border: 2px solid var(--secondary-color);
+        }
+
+        .outcomes-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-top: 25px;
+        }
+
+        .outcome-item {
+            background: var(--gray-light);
+            padding: 25px;
+            border-radius: 10px;
+            text-align: center;
+            border: 2px solid transparent;
+            transition: var(--transition);
+        }
+
+        .outcome-item:hover {
+            border-color: var(--secondary-color);
+            transform: translateY(-3px);
+        }
+
+        .outcome-item i {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+        }
+
+        .outcome-item h4 {
+            color: var(--primary-color);
+            margin-bottom: 10px;
+            font-size: 1rem;
+            font-weight: 600;
+        }
+
+        .outcome-item p {
+            color: var(--text-dark);
+            margin: 0;
+            font-size: 0.9rem;
+            line-height: 1.4;
+        }
+
+        .commitment-section {
+            background: linear-gradient(135deg, var(--secondary-color), var(--secondary-light));
+            color: var(--primary-color);
+            padding: 50px;
+            border-radius: 15px;
+            text-align: center;
+            margin: 40px 0;
+        }
+
+        .commitment-section h3 {
+            margin-bottom: 30px;
+            font-size: 2rem;
+        }
+
+        .commitment-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+            margin-top: 30px;
+        }
+
+        .commitment-item {
+            background: rgba(255, 255, 255, 0.3);
+            padding: 25px;
+            border-radius: 15px;
+            transition: var(--transition);
+        }
+
+        .commitment-item:hover {
+            background: rgba(255, 255, 255, 0.5);
+            transform: translateY(-5px);
+        }
+
+        .commitment-item i {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+        }
+
+        .commitment-item h4 {
+            margin: 0;
+            font-size: 1.1rem;
+            font-weight: 600;
+            line-height: 1.4;
+        }
+
+        .conclusion-text {
+            background: rgba(233, 198, 111, 0.2);
+            padding: 30px;
+            border-radius: 15px;
+            border-left: 4px solid var(--secondary-color);
+            margin-top: 30px;
+            text-align: center;
+        }
+
+        .conclusion-text p {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--primary-color);
+            margin: 0;
+            line-height: 1.6;
+        }
+
+        @media (max-width: 768px) {
+            .content-block {
+                padding: 30px 20px;
+            }
+            
+            .classes-grid,
+            .aims-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .streams-section,
+            .approach-section,
+            .assessment-section,
+            .outcomes-section,
+            .commitment-section {
+                padding: 30px 20px;
+            }
+            
+            .streams-grid,
+            .outcomes-grid,
+            .commitment-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .aim-card {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- ===== HEADER ===== -->
+    <header class="header" id="header">
+        <!-- Top Bar (Gold) -->
+        <div class="top-bar">
+            <div class="container">
+                <div class="top-bar-left">
+                    <div class="top-bar-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        P B Road, Davanagere
+                    </div>
+                    <div class="top-bar-item">
+                        <i class="fas fa-phone-alt"></i>
+                        <a href="tel:8192233344">8192233344</a>
+                    </div>
+                    <div class="top-bar-item">
+                        <i class="fas fa-envelope"></i>
+                        <a href="mailto:info@gmls.ac.in">info@gmls.ac.in</a>
+                    </div>
+                </div>
+                <div class="top-bar-right">
+                    <a href="../index.html#gallery" class="top-bar-item">
+                        <i class="fas fa-images"></i> Gallery
+                    </a>
+                    <a href="#" class="login-btn">Login</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main Navigation (Maroon) -->
+        <nav class="nav-section">
+            <div class="container">
+                <div class="header-logo-wrap">
+                    <a href="../index.html">
+                        <img src="../assests/logo.png" alt="GM Legacy School Logo" class="logo">
+                    </a>
+                </div>
+
+                <div class="nav-content-wrap">
+                    <div class="nav-menu-wrapper">
+                        <div class="nav-row row-1">
+                            <div class="dropdown">
+                                <a href="#about" class="nav-link" id="aboutDropdown">About</a>
+                                <div class="dropdown-content">
+                                    <a href="../about/vision-mission.html">Vision, Mission & Objectives</a>
+                                    <a href="../about/founders-message.html">Founder's Message</a>
+                                    <a href="../about/principals-message.html">Principal's Message</a>
+                                    <a href="../about/philosophy-values.html">School Philosophy & Values</a>
+                                    <a href="../about/nep-alignment.html">NEP 2020 Alignment</a>
+                                    <a href="../about/school-history.html">School History / Legacy</a>
+                                    <a href="../about/governance.html">Governance & Management</a>
+                                    <a href="../about/public-disclosure.html">Mandatory Public Disclosure (CBSE)</a>
+                                </div>
+                            </div>
+                            <div class="dropdown">
+                                <a href="#admissions" class="nav-link" id="admissionsDropdown">Admissions</a>
+                                <div class="dropdown-content">
+                                    <a href="../admissions/overview.html">Admission Overview</a>
+                                    <a href="../admissions/eligibility.html">Eligibility Criteria</a>
+                                    <a href="../admissions/process.html">Admission Process</a>
+                                    <a href="../admissions/schedule.html">Admission Schedule</a>
+                                    <a href="../admissions/transfer.html">Transfer Admissions</a>
+                                    <a href="../admissions/faqs.html">FAQs on Admissions</a>
+                                </div>
+                            </div>
+                            <div class="dropdown">
+                                <a href="#board" class="nav-link" id="boardDropdown">Board & Schools</a>
+                                <div class="dropdown-content">
+                                    <a href="../board/affiliation.html">CBSE Affiliation Details</a>
+                                    <a href="../board/nep-structure.html" style="font-weight: 600; color: var(--primary-color);">NEP Structure of School</a>
+                                    <a href="../board/nep-foundational.html" style="padding-left: 30px;">Foundational Stage</a>
+                                    <a href="../board/nep-preparatory.html" style="padding-left: 30px;">Preparatory Stage</a>
+                                    <a href="../board/nep-middle.html" style="padding-left: 30px;">Middle School</a>
+                                    <a href="../board/nep-secondary.html" style="padding-left: 30px;">Secondary School</a>
+                                    <a href="../board/academic-calendar.html">Academic Calendar</a>
+                                    <a href="../board/examination-assessment.html">Examination & Assessment System</a>
+                                    <a href="../board/policies-guidelines.html">Policies & Guidelines</a>
+                                </div>
+                            </div>
+                            <div class="dropdown">
+                                <a href="#curriculum" class="nav-link active" id="curriculumDropdown">Curriculum</a>
+                                <div class="dropdown-content">
+                                    <a href="nep-framework.html">NEP-Based Curriculum Framework</a>
+                                    <a href="foundational-curriculum.html">Foundational Stage Curriculum</a>
+                                    <a href="primary-curriculum.html">Primary Curriculum</a>
+                                    <a href="middle-curriculum.html">Middle School Curriculum</a>
+                                    <a href="secondary-curriculum.html" class="active">Secondary Curriculum</a>
+                                    <a href="skill-based-education.html">Skill-Based Education</a>
+                                    <a href="value-education.html">Value Education & Life Skills</a>
+                                </div>
+                            </div>
+                            <div class="dropdown">
+                                <a href="#teaching" class="nav-link">Teaching and Learning</a>
+                                <div class="dropdown-content">
+                                    <a href="../teaching/methods.html">Teaching and Learning Methods</a>
+                                </div>
+                            </div>
+                            <div class="dropdown">
+                                <a href="#extracurricular" class="nav-link">Co and Extra Curricular</a>
+                                <div class="dropdown-content">
+                                    <a href="../extracurricular/activities.html">Co-Curricular and Extra-Curricular Activities</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="nav-row row-2">
+                            <a href="../facilities/index.html" class="nav-link">Facilities</a>
+                            <a href="../fee/index.html" class="nav-link">Fee</a>
+                            <a href="../faculty/index.html" class="nav-link">Faculty</a>
+                            <a href="../residential/index.html" class="nav-link">Residential Facilities</a>
+                            <a href="../campus/index.html" class="nav-link">Campus</a>
+                            <a href="../index.html#disclosures" class="nav-link">Mandatory Disclosures</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="hamburger" id="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- ===== PAGE HEADER ===== -->
+    <section class="page-header">
+        <div class="container">
+            <h1>Secondary Curriculum</h1>
+        </div>
+    </section>
+
+    <!-- ===== MAIN CONTENT ===== -->
+    <section class="page-content">
+        <div class="container">
+            <!-- Introduction -->
+            <div class="content-block">
+                <h2>Secondary Curriculum</h2>
+                <p class="intro-text">At GM Legacy School, the Secondary Curriculum is designed to prepare students for CBSE Board Examinations, higher education, careers, and responsible adulthood. This stage focuses on academic depth, multidisciplinary learning, skill development, and career readiness, in accordance with the Secondary Stage of NEP 2020.</p>
+                
+                <div class="highlight-box">
+                    <p>The Secondary Programme caters to students between the ages of 14 and 18 years, typically studying in Classes IX to XII.</p>
+                </div>
+            </div>
+
+            <!-- Classes Covered -->
+            <div class="content-block">
+                <h2>Classes Covered</h2>
+                
+                <div class="classes-grid">
+                    <div class="class-card">
+                        <h4>Secondary Level</h4>
+                        <p>Class IX and Class X</p>
+                    </div>
+                    <div class="class-card">
+                        <h4>Senior Secondary Level</h4>
+                        <p>Class XI and Class XII</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Aims -->
+            <div class="content-block">
+                <h2>Aims of the Secondary Curriculum</h2>
+                <p>The Secondary Curriculum aims to:</p>
+                
+                <div class="aims-grid">
+                    <div class="aim-card">
+                        <div class="aim-icon">
+                            <i class="fas fa-book-open"></i>
+                        </div>
+                        <div class="aim-content">
+                            <h4>Strong Foundations</h4>
+                            <p>Provide strong conceptual foundations in chosen subjects</p>
+                        </div>
+                    </div>
+                    <div class="aim-card">
+                        <div class="aim-icon">
+                            <i class="fas fa-certificate"></i>
+                        </div>
+                        <div class="aim-content">
+                            <h4>Board Exam Preparation</h4>
+                            <p>Prepare students thoroughly for CBSE Board Examinations</p>
+                        </div>
+                    </div>
+                    <div class="aim-card">
+                        <div class="aim-icon">
+                            <i class="fas fa-brain"></i>
+                        </div>
+                        <div class="aim-content">
+                            <h4>Critical Thinking</h4>
+                            <p>Develop critical thinking, problem-solving, and analytical skills</p>
+                        </div>
+                    </div>
+                    <div class="aim-card">
+                        <div class="aim-icon">
+                            <i class="fas fa-project-diagram"></i>
+                        </div>
+                        <div class="aim-content">
+                            <h4>Multidisciplinary Learning</h4>
+                            <p>Encourage multidisciplinary learning and flexibility of choice</p>
+                        </div>
+                    </div>
+                    <div class="aim-card">
+                        <div class="aim-icon">
+                            <i class="fas fa-compass"></i>
+                        </div>
+                        <div class="aim-content">
+                            <h4>Career Exploration</h4>
+                            <p>Support career exploration and informed decision-making</p>
+                        </div>
+                    </div>
+                    <div class="aim-card">
+                        <div class="aim-icon">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <div class="aim-content">
+                            <h4>Leadership & Ethics</h4>
+                            <p>Build leadership, ethics, and social responsibility</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Curriculum Structure -->
+            <div class="content-block">
+                <h2>Curriculum Structure</h2>
+                
+                <div class="curriculum-structure">
+                    <!-- Classes IX & X -->
+                    <div class="level-section">
+                        <div class="level-header">
+                            <div class="level-icon">IX-X</div>
+                            <h4>Classes IX & X (Secondary Level)</h4>
+                        </div>
+                        <p><strong>Common core subjects as prescribed by CBSE:</strong></p>
+                        <ul class="subjects-list">
+                            <li><i class="fas fa-circle"></i> English</li>
+                            <li><i class="fas fa-circle"></i> Second Language (Hindi / Kannada / other)</li>
+                            <li><i class="fas fa-circle"></i> Mathematics</li>
+                            <li><i class="fas fa-circle"></i> Science</li>
+                            <li><i class="fas fa-circle"></i> Social Science</li>
+                            <li><i class="fas fa-circle"></i> Information Technology / Skill Subject</li>
+                            <li><i class="fas fa-circle"></i> Physical Education / Health & Wellness</li>
+                        </ul>
+                        <div class="highlight-box">
+                            <p><strong>Focus:</strong> Mastery of CBSE syllabus and competencies, Strong preparation for Class X Board Examination, Development of writing skills, problem-solving, and scientific reasoning</p>
+                        </div>
+                    </div>
+
+                    <!-- Classes XI & XII -->
+                    <div class="level-section">
+                        <div class="level-header">
+                            <div class="level-icon">XI-XII</div>
+                            <h4>Classes XI & XII (Senior Secondary Level)</h4>
+                        </div>
+                        <p>Students choose streams and subject combinations as per interest, aptitude, and career goals.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Streams -->
+            <div class="streams-section">
+                <h3>Streams Proposed</h3>
+                
+                <div class="streams-grid">
+                    <div class="stream-card">
+                        <h4>Science Stream</h4>
+                        <ul class="stream-subjects">
+                            <li>Physics</li>
+                            <li>Chemistry</li>
+                            <li>Mathematics / Biology</li>
+                            <li>Computer Science / Informatics Practices</li>
+                            <li>English</li>
+                        </ul>
+                    </div>
+                    <div class="stream-card">
+                        <h4>Commerce Stream</h4>
+                        <ul class="stream-subjects">
+                            <li>Accountancy</li>
+                            <li>Business Studies</li>
+                            <li>Economics</li>
+                            <li>Mathematics / Entrepreneurship</li>
+                            <li>English</li>
+                        </ul>
+                    </div>
+                    <div class="stream-card">
+                        <h4>Humanities Stream</h4>
+                        <ul class="stream-subjects">
+                            <li>History</li>
+                            <li>Political Science</li>
+                            <li>Geography</li>
+                            <li>Sociology / Psychology</li>
+                            <li>Economics</li>
+                            <li>English</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div style="text-align: center; margin-top: 25px; padding: 20px; background: rgba(255, 255, 255, 0.3); border-radius: 10px;">
+                    <p style="margin: 0; font-weight: 600; font-size: 1rem;">(Subject combinations will be offered as per CBSE approval and availability.)</p>
+                </div>
+            </div>
+
+            <!-- Teaching-Learning Approach -->
+            <div class="approach-section">
+                <h3>Teaching–Learning Approach</h3>
+                
+                <ul class="approach-points">
+                    <li>
+                        <i class="fas fa-chalkboard-teacher"></i>
+                        <span>Subject-specialist teachers for each discipline</span>
+                    </li>
+                    <li>
+                        <i class="fas fa-lightbulb"></i>
+                        <span>Concept-based and application-oriented teaching</span>
+                    </li>
+                    <li>
+                        <i class="fas fa-flask"></i>
+                        <span>Use of laboratories, projects, case studies, and seminars</span>
+                    </li>
+                    <li>
+                        <i class="fas fa-laptop"></i>
+                        <span>Integration of technology and digital resources</span>
+                    </li>
+                    <li>
+                        <i class="fas fa-user-tie"></i>
+                        <span>Regular doubt-clearing sessions and academic mentoring</span>
+                    </li>
+                </ul>
+                
+                <div style="text-align: center; margin-top: 25px; padding: 20px; background: var(--white); border-radius: 10px; border-left: 4px solid var(--secondary-color);">
+                    <p style="margin: 0; font-weight: 600; font-size: 1.1rem; color: var(--primary-color);">Teachers guide students to think independently, analyse deeply, and apply knowledge effectively.</p>
+                </div>
+            </div>
+
+            <!-- Assessment & Board Examination Preparation -->
+            <div class="assessment-section">
+                <h3>Assessment & Board Examination Preparation</h3>
+                
+                <ul class="assessment-points">
+                    <li>
+                        <i class="fas fa-clipboard-check"></i>
+                        <span>Periodic Tests, Half-Yearly and Annual Examinations</span>
+                    </li>
+                    <li>
+                        <i class="fas fa-certificate"></i>
+                        <span>Pre-Board Examinations for Classes X & XII</span>
+                    </li>
+                    <li>
+                        <i class="fas fa-file-alt"></i>
+                        <span>Practice papers and mock tests</span>
+                    </li>
+                    <li>
+                        <i class="fas fa-chart-line"></i>
+                        <span>Continuous internal assessment as per CBSE scheme</span>
+                    </li>
+                    <li>
+                        <i class="fas fa-brain"></i>
+                        <span>Focus on competency-based and higher-order questions</span>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Skill Education & Career Guidance -->
+            <div class="content-block">
+                <h2>Skill Education & Career Guidance</h2>
+                <ul class="subjects-list">
+                    <li><i class="fas fa-circle"></i> Skill-based and vocational courses as per NEP 2020</li>
+                    <li><i class="fas fa-circle"></i> Career guidance and counselling programmes</li>
+                    <li><i class="fas fa-circle"></i> Exposure to competitive examinations and entrance tests</li>
+                    <li><i class="fas fa-circle"></i> Guidance for higher education in India and abroad</li>
+                </ul>
+            </div>
+
+            <!-- Student Development & Leadership -->
+            <div class="content-block">
+                <h2>Student Development & Leadership</h2>
+                <ul class="subjects-list">
+                    <li><i class="fas fa-circle"></i> Student Council and leadership programmes</li>
+                    <li><i class="fas fa-circle"></i> Community service and social outreach</li>
+                    <li><i class="fas fa-circle"></i> Ethics, citizenship, and constitutional values education</li>
+                    <li><i class="fas fa-circle"></i> Life skills, communication skills, and personality development</li>
+                </ul>
+            </div>
+
+            <!-- Learning Outcomes -->
+            <div class="outcomes-section">
+                <h3>Learning Outcomes</h3>
+                <p>By the end of the Secondary Stage, students are expected to:</p>
+                
+                <div class="outcomes-grid">
+                    <div class="outcome-item">
+                        <i class="fas fa-trophy"></i>
+                        <h4>Academic Excellence</h4>
+                        <p>Achieve academic excellence in chosen subjects</p>
+                    </div>
+                    <div class="outcome-item">
+                        <i class="fas fa-certificate"></i>
+                        <h4>Board Readiness</h4>
+                        <p>Be well-prepared for CBSE Board Examinations</p>
+                    </div>
+                    <div class="outcome-item">
+                        <i class="fas fa-compass"></i>
+                        <h4>Career Clarity</h4>
+                        <p>Make informed career and higher education choices</p>
+                    </div>
+                    <div class="outcome-item">
+                        <i class="fas fa-medal"></i>
+                        <h4>Leadership</h4>
+                        <p>Demonstrate discipline, integrity, and leadership qualities</p>
+                    </div>
+                    <div class="outcome-item">
+                        <i class="fas fa-user-graduate"></i>
+                        <h4>Maturity</h4>
+                        <p>Grow into confident, responsible, and capable young adults</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Our Commitment -->
+            <div class="commitment-section">
+                <h3>Our Commitment</h3>
+                <p>At GM Legacy School, the Secondary Curriculum ensures that every student:</p>
+                
+                <div class="commitment-grid">
+                    <div class="commitment-item">
+                        <i class="fas fa-graduation-cap"></i>
+                        <h4>Receives strong academic and career preparation</h4>
+                    </div>
+                    <div class="commitment-item">
+                        <i class="fas fa-cogs"></i>
+                        <h4>Develops future-ready skills and ethical values</h4>
+                    </div>
+                    <div class="commitment-item">
+                        <i class="fas fa-rocket"></i>
+                        <h4>Is empowered to pursue higher education and meaningful careers</h4>
+                    </div>
+                </div>
+
+                <div class="conclusion-text">
+                    <p>We strive to nurture not only successful students, but responsible leaders of tomorrow.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="footer" id="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <img src="../assests/logo.png" alt="GM Legacy School Logo" class="footer-logo">
+                    <p>GM Legacy School is dedicated to providing quality education and nurturing young minds to become
+                        responsible citizens and future leaders.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <a href="../index.html#about">About</a>
+                    <a href="../index.html#admissions">Admissions</a>
+                    <a href="../index.html#curriculum">Curriculum</a>
+                    <a href="../index.html#facilities">Facilities</a>
+                    <a href="../index.html#faculty">Faculty</a>
+                    <a href="../index.html#disclosures">Mandatory Disclosures</a>
+                </div>
+                <div class="footer-section">
+                    <h3>Contact Us</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> P B Road, Davanagere-577 006, Karnataka</p>
+                    <p><i class="fas fa-phone-alt"></i> +91 XXXXXXXXXX</p>
+                    <p><i class="fas fa-envelope"></i> info@gmls.ac.in</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Follow Us</h3>
+                    <p>
+                        <a href="#"><i class="fab fa-facebook-f"></i> Facebook</a>
+                    </p>
+                    <p>
+                        <a href="#"><i class="fab fa-instagram"></i> Instagram</a>
+                    </p>
+                    <p>
+                        <a href="#"><i class="fab fa-youtube"></i> YouTube</a>
+                    </p>
+                    <p>
+                        <a href="#"><i class="fab fa-twitter"></i> Twitter</a>
+                    </p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 GM Legacy School. All Rights Reserved. | Designed with <i class="fas fa-heart"
+                        style="color: #e9c66f;"></i></p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Main JavaScript -->
+    <script src="../js/main.js"></script>
+</body>
+
+</html>
