@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Test</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        /* Additional test styles to ensure mobile layout works */
+        @media screen and (max-width: 768px) {
+            .quick-access-grid {
+                grid-template-columns: 1fr !important;
+                display: grid !important;
+                gap: 20px !important;
+                width: 100% !important;
+            }
+            
+            .access-card {
+                width: 100% !important;
+                max-width: none !important;
+                margin: 0 auto !important;
+                grid-column: 1 !important;
+            }
+        }
+        
+        /* Debug styles */
+        .debug-info {
+            position: fixed;
+            top: 10px;
+            right: 10px;
+            background: rgba(0,0,0,0.8);
+            color: white;
+            padding: 10px;
+            border-radius: 5px;
+            z-index: 9999;
+            font-size: 12px;
+        }
+    </style>
+</head>
+<body>
+    <div class="debug-info">
+        Screen width: <span id="width"></span>px
+    </div>
+    
+    <section class="quick-access" id="quick-access">
+        <div class="container">
+            <div class="quick-access-grid">
+                <!-- School Address Card -->
+                <div class="access-card address-card">
+                    <div class="card-header">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <h3>School Address</h3>
+                    </div>
+                    <div class="card-content">
+                        <p><strong>GM Legacy School</strong></p>
+                        <p>P B Road, Davanagere-577 006</p>
+                        <p>Karnataka, India</p>
+                    </div>
+                </div>
+
+                <!-- Students Corner Card -->
+                <div class="access-card students-card">
+                    <div class="card-header">
+                        <i class="fas fa-graduation-cap"></i>
+                        <h3>Students Corner</h3>
+                    </div>
+                    <div class="card-content">
+                        <p>Student resources and information</p>
+                    </div>
+                </div>
+
+                <!-- Parents Corner Card -->
+                <div class="access-card parents-card">
+                    <div class="card-header">
+                        <i class="fas fa-users"></i>
+                        <h3>Parents Corner</h3>
+                    </div>
+                    <div class="card-content">
+                        <p>Parent resources and information</p>
+                    </div>
+                </div>
+
+                <!-- School Location Map Card -->
+                <div class="access-card location-card">
+                    <div class="card-header">
+                        <i class="fas fa-map"></i>
+                        <h3>School Location</h3>
+                    </div>
+                    <div class="card-content">
+                        <p>Location and map information</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        function updateWidth() {
+            document.getElementById('width').textContent = window.innerWidth;
+        }
+        updateWidth();
+        window.addEventListener('resize', updateWidth);
+    </script>
+</body>
+</html>
