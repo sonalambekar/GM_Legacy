@@ -657,6 +657,62 @@ img {
     animation: float 8s ease-in-out infinite;
 }
 
+.doodle-5 {
+    top: 40%;
+    left: 20%;
+    font-size: 2rem;
+    animation: float 5.5s ease-in-out infinite;
+}
+
+.doodle-6 {
+    top: 55%;
+    right: 18%;
+    font-size: 2.2rem;
+    animation: float-reverse 6.5s ease-in-out infinite;
+}
+
+.doodle-7 {
+    bottom: 15%;
+    left: 40%;
+    font-size: 1.8rem;
+    animation: float 7.5s ease-in-out infinite;
+}
+
+.doodle-8 {
+    bottom: 10%;
+    right: 40%;
+    font-size: 2rem;
+    animation: float-reverse 9s ease-in-out infinite;
+}
+
+.doodle-9 {
+    top: 10%;
+    left: 45%;
+    font-size: 1.5rem;
+    animation: float 10s ease-in-out infinite;
+}
+
+.doodle-10 {
+    top: 70%;
+    left: 10%;
+    font-size: 1.7rem;
+    animation: float-reverse 11s ease-in-out infinite;
+}
+
+.doodle-11 {
+    top: 30%;
+    right: 35%;
+    font-size: 1.6rem;
+    animation: float 12s ease-in-out infinite;
+}
+
+.doodle-12 {
+    bottom: 40%;
+    right: 5%;
+    font-size: 1.9rem;
+    animation: float-reverse 10s ease-in-out infinite;
+}
+
 /* Central Hero Content */
 .hero-main-content {
     flex: 1;

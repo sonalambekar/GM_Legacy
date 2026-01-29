@@ -26,6 +26,38 @@
 
     <!-- Main Stylesheet -->
     <link rel="stylesheet" href="css/style.css">
+
+    <!-- Index Page Specific Animations -->
+    <style>
+        /* Smooth Scroll */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Reveal Animation Base State */
+        .reveal-section {
+            opacity: 0;
+            transform: translateY(80px);
+            transition: all 1.2s cubic-bezier(0.2, 0.8, 0.2, 1);
+            visibility: hidden;
+            will-change: transform, opacity;
+        }
+
+        /* Reveal Animation Active State */
+        .reveal-section.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+            visibility: visible;
+        }
+
+        /* Faster animations for mobile */
+        @media (max-width: 768px) {
+            .reveal-section {
+                transform: translateY(40px);
+                transition-duration: 0.8s;
+            }
+        }
+    </style>
 </head>
 
 <body>
@@ -127,6 +159,14 @@
         <i class="fas fa-robot hero-doodle doodle-2"></i>
         <i class="fas fa-flask hero-doodle doodle-3"></i>
         <i class="fas fa-palette hero-doodle doodle-4"></i>
+        <i class="fas fa-baseball-bat-ball hero-doodle doodle-5"></i>
+        <i class="fas fa-person-swimming hero-doodle doodle-6"></i>
+        <i class="fas fa-child-reaching hero-doodle doodle-7"></i>
+        <i class="fas fa-person-sliding hero-doodle doodle-8"></i>
+        <i class="fas fa-football hero-doodle doodle-9"></i>
+        <i class="fas fa-bicycle hero-doodle doodle-10"></i>
+        <i class="fas fa-music hero-doodle doodle-11"></i>
+        <i class="fas fa-laptop-code hero-doodle doodle-12"></i>
 
         <div class="container">
             <!-- Left Kid -->
@@ -140,7 +180,7 @@
             <!-- Main Content -->
             <div class="hero-main-content">
                 <div class="hero-badge">Excellence in Education</div>
-                <h1>GM Legacy - Better Future <br> For ur Kids</h1>
+                <h1>GM Legacy <br> Better Future <br> for your Kids</h1>
                 <p class="hero-subtitle">Let the child be the director, and the actor in his own play. Providing a
                     nurturing environment for growth and leadership.</p>
                 <div class="hero-actions">
@@ -448,6 +488,53 @@
 
     <!-- Main JavaScript -->
     <script src="js/main.js"></script>
+
+    <!-- Scroll Reveal Activation Script -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Select all major sections to animate
+            const sections = document.querySelectorAll('.hero-new, .hero-footer-programs, .initiatives-section, .info-corner-section, .quick-access, footer.footer');
+
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('is-visible');
+                    }
+                });
+            }, observerOptions);
+
+            sections.forEach(section => {
+                section.classList.add('reveal-section');
+                observer.observe(section);
+            });
+
+            // Smooth Scroll for all internal links with header offset
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    const targetId = this.getAttribute('href');
+                    if (targetId === '#' || !targetId.startsWith('#')) return;
+
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        e.preventDefault();
+                        const header = document.querySelector('.header-modern');
+                        const headerHeight = header ? header.offsetHeight + 20 : 100;
+                        const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset - headerHeight;
+
+                        window.scrollTo({
+                            top: targetPosition,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+        });
+    </script>
 </body>
 
 </html>
