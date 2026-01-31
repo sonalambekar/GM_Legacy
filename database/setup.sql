@@ -70,3 +70,56 @@ CREATE TABLE IF NOT EXISTS `admission_applications` (
   KEY `idx_academic_year` (`academic_year`),
   KEY `idx_created_at` (`created_at`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+-- Create provisional_admission_letters table
+CREATE TABLE IF NOT EXISTS `provisional_admission_letters` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `letter_no` varchar(50) NOT NULL,
+  `issue_date` date NOT NULL,
+  `parent_name` varchar(100) NOT NULL,
+  `parent_address` text NOT NULL,
+  `student_name` varchar(100) NOT NULL,
+  `class_admitted` varchar(50) NOT NULL,
+  `academic_year` varchar(20) NOT NULL,
+  `admission_deadline` date NOT NULL,
+  `contact_number` varchar(20) NOT NULL,
+  `email_id` varchar(100) DEFAULT NULL,
+  `application_reference` varchar(50) DEFAULT NULL,
+  `status` enum('Generated','Sent','Acknowledged') DEFAULT 'Generated',
+  `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `updated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `idx_letter_no` (`letter_no`),
+  KEY `idx_student_name` (`student_name`),
+  KEY `idx_academic_year` (`academic_year`),
+  KEY `idx_status` (`status`),
+  KEY `idx_created_at` (`created_at`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+-- Create admission_confirmation_letters table
+CREATE TABLE IF NOT EXISTS `admission_confirmation_letters` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `confirmation_no` varchar(50) NOT NULL,
+  `issue_date` date NOT NULL,
+  `parent_name` varchar(100) NOT NULL,
+  `parent_address` text NOT NULL,
+  `student_name` varchar(100) NOT NULL,
+  `class_confirmed` varchar(50) NOT NULL,
+  `academic_year` varchar(20) NOT NULL,
+  `joining_date` date NOT NULL,
+  `contact_number` varchar(20) NOT NULL,
+  `email_id` varchar(100) DEFAULT NULL,
+  `provisional_letter_reference` varchar(50) DEFAULT NULL,
+  `fees_received` decimal(10,2) DEFAULT NULL,
+  `documents_verified` tinyint(1) DEFAULT 1,
+  `transport_required` tinyint(1) DEFAULT 0,
+  `special_instructions` text DEFAULT NULL,
+  `status` enum('Confirmed','Joining_Pending','Joined','Cancelled') DEFAULT 'Confirmed',
+  `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `updated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `idx_confirmation_no` (`confirmation_no`),
+  KEY `idx_student_name` (`student_name`),
+  KEY `idx_academic_year` (`academic_year`),
+  KEY `idx_joining_date` (`joining_date`),
+  KEY `idx_status` (`status`),
+  KEY `idx_created_at` (`created_at`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
