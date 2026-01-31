@@ -1245,7 +1245,7 @@ section {
     transform: translateX(-50%);
     width: 80px;
     height: 4px;
-    background: linear-gradient(90deg, var(--secondary-color), var(--primary-color));
+    background: var(--primary-color);
     border-radius: 2px;
 }
 
@@ -1260,7 +1260,7 @@ section {
 
 /* About Section */
 .about {
-    background: linear-gradient(135deg, var(--cream) 0%, var(--cream-dark) 100%);
+    background: var(--cream);
 }
 
 .about-content {
@@ -1328,7 +1328,7 @@ section {
 .feature-icon {
     width: 80px;
     height: 80px;
-    background: linear-gradient(135deg, var(--primary-color), var(--primary-light));
+    background: var(--primary-color);
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -1351,7 +1351,7 @@ section {
 
 /* CTA Section */
 .cta {
-    background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-dark) 100%);
+    background: var(--primary-color);
     color: var(--white);
     text-align: center;
     padding: 80px 20px;
@@ -2662,7 +2662,7 @@ section {
 .cbse-logo {
     width: 80px;
     height: 80px;
-    background: linear-gradient(135deg, var(--primary-color), var(--primary-light));
+    background: var(--primary-color);
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -2708,7 +2708,7 @@ section {
 }
 
 .detail-card.highlight {
-    background: linear-gradient(135deg, var(--primary-color), var(--primary-light));
+    background: var(--primary-color);
     color: var(--white);
     border-left: 4px solid var(--secondary-color);
 }
@@ -2782,7 +2782,7 @@ section {
     display: inline-flex;
     align-items: center;
     gap: 10px;
-    background: linear-gradient(135deg, var(--secondary-color), var(--secondary-light));
+    background: var(--secondary-color);
     color: var(--primary-color);
     padding: 12px 25px;
     border-radius: 25px;
@@ -2882,7 +2882,7 @@ section {
 .nep-logo {
     width: 80px;
     height: 80px;
-    background: linear-gradient(135deg, var(--primary-color), var(--primary-light));
+    background: var(--primary-color);
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -2955,22 +2955,22 @@ section {
 }
 
 .structure-item.foundational {
-    background: linear-gradient(135deg, #e8f5e8, #d4f1d4);
+    background: #e8f5e8;
     border: 2px solid #4caf50;
 }
 
 .structure-item.preparatory {
-    background: linear-gradient(135deg, #e3f2fd, #bbdefb);
+    background: #e3f2fd;
     border: 2px solid #2196f3;
 }
 
 .structure-item.middle {
-    background: linear-gradient(135deg, #fff3e0, #ffe0b2);
+    background: #fff3e0;
     border: 2px solid #ff9800;
 }
 
 .structure-item.secondary {
-    background: linear-gradient(135deg, #fce4ec, #f8bbd9);
+    background: #fce4ec;
     border: 2px solid #e91e63;
 }
 
@@ -3047,7 +3047,7 @@ section {
 .stage-icon {
     width: 60px;
     height: 60px;
-    background: linear-gradient(135deg, var(--primary-color), var(--primary-light));
+    background: var(--primary-color);
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -3100,7 +3100,7 @@ section {
 }
 
 .stage-description {
-    background: linear-gradient(135deg, var(--gray-light), #f9f9f9);
+    background: var(--gray-light);
     padding: 20px;
     border-radius: 10px;
     font-style: italic;
@@ -3136,7 +3136,7 @@ section {
 .feature-item {
     text-align: center;
     padding: 25px;
-    background: linear-gradient(135deg, var(--gray-light), #f9f9f9);
+    background: var(--gray-light);
     border-radius: 15px;
     transition: var(--transition);
     border: 2px solid transparent;
@@ -3145,7 +3145,7 @@ section {
 .feature-item:hover {
     transform: translateY(-5px);
     border-color: var(--secondary-color);
-    background: linear-gradient(135deg, var(--secondary-light), #f5f0d8);
+    background: var(--secondary-light);
 }
 
 .feature-item i {
@@ -3163,7 +3163,7 @@ section {
 
 /* Our Approach */
 .our-approach {
-    background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
+    background: var(--primary-color);
     color: var(--white);
     padding: 50px;
     border-radius: 20px;
@@ -3422,7 +3422,7 @@ section {
 .page-header {
     padding-top: 150px !important;
     padding-bottom: 60px !important;
-    background: linear-gradient(to bottom, #fffcf5, #ffffff) !important;
+    background: #fffcf5 !important;
     color: var(--primary-color) !important;
     text-align: center;
 }
@@ -3442,7 +3442,7 @@ section {
 /* Initiatives Section */
 .initiatives-section {
     padding: 100px 0;
-    background: linear-gradient(135deg, #fdf4f4 0%, #f7f1ff 100%);
+    background: #fdf4f4;
     position: relative;
     overflow: hidden;
 }
@@ -3598,7 +3598,7 @@ section {
 /* Information Corner Section */
 .info-corner-section {
     padding: 80px 0;
-    background: linear-gradient(135deg, #fffafa 0%, #f9f5ff 100%);
+    background: #fffafa;
 }
 
 .info-box-container {
@@ -3783,7 +3783,7 @@ section {
 }
 
 .enquiry-modal-header {
-    background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
+    background: var(--primary-color);
     color: var(--white);
     padding: 25px 30px;
     border-radius: 15px 15px 0 0;
@@ -3946,7 +3946,7 @@ section {
 }
 
 .signature-note {
-    background: linear-gradient(135deg, var(--gray-light), #f9f9f9);
+    background: var(--gray-light);
     padding: 15px;
     border-radius: 8px;
     font-size: 0.9rem;
@@ -3987,7 +3987,7 @@ section {
 }
 
 .btn-submit {
-    background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
+    background: var(--primary-color);
     color: var(--white);
 }
 
@@ -4140,7 +4140,7 @@ section {
 }
 
 .admission-modal-header {
-    background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
+    background: var(--primary-color);
     color: var(--white);
     padding: 25px 30px;
     border-radius: 15px 15px 0 0;
@@ -4189,7 +4189,7 @@ section {
 }
 
 .parent-subsection {
-    background: linear-gradient(135deg, var(--gray-light), #f9f9f9);
+    background: var(--gray-light);
     padding: 20px;
     border-radius: 10px;
     margin-bottom: 20px;
@@ -4205,7 +4205,7 @@ section {
 }
 
 .declaration-text {
-    background: linear-gradient(135deg, var(--secondary-light), #f5f0d8);
+    background: var(--secondary-light);
     padding: 20px;
     border-radius: 10px;
     margin-bottom: 20px;
@@ -4333,7 +4333,7 @@ section {
 }
 
 .provisional-admission-modal-header {
-    background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
+    background: var(--primary-color);
     color: var(--white);
     padding: 25px 30px;
     border-radius: 15px 15px 0 0;
@@ -4388,7 +4388,7 @@ section {
 }
 
 .deadline-note {
-    background: linear-gradient(135deg, #e3f2fd, #bbdefb);
+    background: #e3f2fd;
     padding: 15px;
     border-radius: 8px;
     margin-top: 15px;
@@ -4409,7 +4409,7 @@ section {
 }
 
 .preview-note {
-    background: linear-gradient(135deg, var(--secondary-light), #f5f0d8);
+    background: var(--secondary-light);
     padding: 20px;
     border-radius: 10px;
     border-left: 4px solid var(--primary-color);
@@ -4469,7 +4469,7 @@ section {
 }
 
 .letter-preview-header {
-    background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
+    background: var(--primary-color);
     color: var(--white);
     padding: 20px 30px;
     border-radius: 15px 15px 0 0;
@@ -4542,7 +4542,7 @@ section {
 }
 
 .btn-print {
-    background: linear-gradient(135deg, #4caf50, #45a049);
+    background: #4caf50;
     color: var(--white);
 }
 
@@ -4552,7 +4552,7 @@ section {
 }
 
 .btn-download {
-    background: linear-gradient(135deg, #2196f3, #1976d2);
+    background: #2196f3;
     color: var(--white);
 }
 
@@ -4695,7 +4695,7 @@ section {
 }
 
 .admission-confirmation-modal-header {
-    background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
+    background: var(--primary-color);
     color: var(--white);
     padding: 25px 30px;
     border-radius: 15px 15px 0 0;
@@ -4750,7 +4750,7 @@ section {
 }
 
 .joining-note {
-    background: linear-gradient(135deg, #e8f5e8, #d4f1d4);
+    background: #e8f5e8;
     padding: 15px;
     border-radius: 8px;
     margin-top: 15px;
@@ -4771,7 +4771,7 @@ section {
 }
 
 .confirmation-preview-note {
-    background: linear-gradient(135deg, var(--secondary-light), #f5f0d8);
+    background: var(--secondary-light);
     padding: 20px;
     border-radius: 10px;
     border-left: 4px solid var(--primary-color);
