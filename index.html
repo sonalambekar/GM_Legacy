@@ -333,14 +333,14 @@
                 <h2>Information on GM Legacy School</h2>
                 <div class="info-grid-modern">
                     <!-- Enquiry Card -->
-                    <a href="#contact" class="info-card-item">
+                    <a href="#" class="info-card-item" onclick="openEnquiryModal(); return false;">
                         <div class="info-card-img-wrapper">
                             <img src="assests/school_library.png" alt="Enquiry Form">
                         </div>
                         <span>Enquiry Form</span>
                     </a>
                     <!-- Admission Card -->
-                    <a href="admissions/process.html" class="info-card-item">
+                    <a href="#" class="info-card-item" onclick="openAdmissionModal(); return false;">
                         <div class="info-card-img-wrapper">
                             <img src="assests/student1.png" alt="Admission Process">
                         </div>
@@ -352,6 +352,20 @@
                             <img src="assests/student2.png" alt="Fee Structure">
                         </div>
                         <span>Fee Structure</span>
+                    </a>
+                    <!-- Provisional Admission Letter Card -->
+                    <a href="#" class="info-card-item" onclick="openProvisionalAdmissionModal(); return false;">
+                        <div class="info-card-img-wrapper">
+                            <img src="assests/science_lab.png" alt="Provisional Admission Letter">
+                        </div>
+                        <span>Provisional Admission Letter</span>
+                    </a>
+                    <!-- Admission Confirmation Letter Card -->
+                    <a href="#" class="info-card-item" onclick="openAdmissionConfirmationModal(); return false;">
+                        <div class="info-card-img-wrapper">
+                            <img src="assests/activity_room.png" alt="Admission Confirmation Letter">
+                        </div>
+                        <span>Admission Confirmation Letter</span>
                     </a>
                     <!-- Location Card -->
                     <a href="campus/index.html" class="info-card-item">
@@ -455,13 +469,739 @@
 
             <!-- Contact Details Button -->
             <div class="contact-details-section">
-                <a href="#contact" class="contact-details-btn">
+                <a href="#" class="contact-details-btn" onclick="openEnquiryModal(); return false;">
                     <i class="fas fa-phone-alt"></i>
                     Contact Details
                 </a>
             </div>
         </div>
     </section>
+
+    <!-- ===== ADMISSION CONFIRMATION LETTER MODAL ===== -->
+    <div id="admissionConfirmationModal" class="admission-confirmation-modal">
+        <div class="admission-confirmation-modal-content">
+            <div class="admission-confirmation-modal-header">
+                <h2>GM LEGACY SCHOOL</h2>
+                <p>(Under Srishyla Education Trust, Davanagere)</p>
+                <h3>Admission Confirmation Letter Generator</h3>
+                <span class="admission-confirmation-close">&times;</span>
+            </div>
+            
+            <form id="admissionConfirmationForm" class="admission-confirmation-form">
+                <!-- Letter Details -->
+                <div class="form-section">
+                    <h4>Letter Details</h4>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="issue_date_acl">Issue Date *</label>
+                            <input type="date" id="issue_date_acl" name="issue_date" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="academic_year_acl">Academic Year *</label>
+                            <select id="academic_year_acl" name="academic_year" required>
+                                <option value="">Select Academic Year</option>
+                                <option value="2024-25">2024-25</option>
+                                <option value="2025-26">2025-26</option>
+                                <option value="2026-27">2026-27</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Parent/Guardian Information -->
+                <div class="form-section">
+                    <h4>Parent/Guardian Information</h4>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="parent_name_acl">Parent/Guardian Name *</label>
+                            <input type="text" id="parent_name_acl" name="parent_name" required placeholder="Mr./Mrs. Full Name">
+                        </div>
+                        <div class="form-group">
+                            <label for="contact_number_acl">Contact Number *</label>
+                            <input type="tel" id="contact_number_acl" name="contact_number" pattern="[0-9]{10}" required>
+                        </div>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group full-width">
+                            <label for="parent_address_acl">Parent Address *</label>
+                            <textarea id="parent_address_acl" name="parent_address" rows="3" required placeholder="Complete residential address"></textarea>
+                        </div>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="email_id_acl">Email ID (Optional)</label>
+                            <input type="email" id="email_id_acl" name="email_id" placeholder="For email notification">
+                        </div>
+                        <div class="form-group">
+                            <label for="provisional_letter_reference">Provisional Letter Reference (Optional)</label>
+                            <input type="text" id="provisional_letter_reference" name="provisional_letter_reference" placeholder="Provisional letter number if available">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Student Information -->
+                <div class="form-section">
+                    <h4>Student Information</h4>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="student_name_acl">Student Name *</label>
+                            <input type="text" id="student_name_acl" name="student_name" required placeholder="Full name of the student">
+                        </div>
+                        <div class="form-group">
+                            <label for="class_confirmed">Class Confirmed *</label>
+                            <select id="class_confirmed" name="class_confirmed" required>
+                                <option value="">Select Class</option>
+                                <option value="Pre-KG">Pre-KG</option>
+                                <option value="LKG">LKG</option>
+                                <option value="UKG">UKG</option>
+                                <option value="1">Class 1</option>
+                                <option value="2">Class 2</option>
+                                <option value="3">Class 3</option>
+                                <option value="4">Class 4</option>
+                                <option value="5">Class 5</option>
+                                <option value="6">Class 6</option>
+                                <option value="7">Class 7</option>
+                                <option value="8">Class 8</option>
+                                <option value="9">Class 9</option>
+                                <option value="10">Class 10</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Admission Completion Details -->
+                <div class="form-section">
+                    <h4>Admission Completion Details</h4>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="joining_date">School Joining Date *</label>
+                            <input type="date" id="joining_date" name="joining_date" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="fees_received">Fees Received (Optional)</label>
+                            <input type="number" id="fees_received" name="fees_received" step="0.01" min="0" placeholder="Amount in ₹">
+                        </div>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>
+                                <input type="checkbox" id="documents_verified" name="documents_verified" checked>
+                                Documents Verified
+                            </label>
+                        </div>
+                        <div class="form-group">
+                            <label>
+                                <input type="checkbox" id="transport_required" name="transport_required">
+                                Transport Facility Required
+                            </label>
+                        </div>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group full-width">
+                            <label for="special_instructions">Special Instructions (Optional)</label>
+                            <textarea id="special_instructions" name="special_instructions" rows="3" placeholder="Any special instructions or notes for the student/parent"></textarea>
+                        </div>
+                    </div>
+                    
+                    <div class="joining-note">
+                        <p><i class="fas fa-info-circle"></i> The joining date should be the first day of school or orientation program.</p>
+                    </div>
+                </div>
+
+                <!-- Letter Preview Note -->
+                <div class="form-section">
+                    <div class="confirmation-preview-note">
+                        <h4>Confirmation Letter Contents</h4>
+                        <p>The admission confirmation letter will include:</p>
+                        <ul>
+                            <li>Official school letterhead and confirmation number</li>
+                            <li>Admission completion confirmation</li>
+                            <li>Document verification and fee receipt acknowledgment</li>
+                            <li>School joining date and instructions</li>
+                            <li>Information about uniform, books, timetable, orientation, and transport</li>
+                            <li>Welcome message to the school community</li>
+                            <li>Principal's signature and school seal</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Submit Button -->
+                <div class="form-actions">
+                    <button type="button" class="btn-cancel" onclick="closeAdmissionConfirmationModal()">Cancel</button>
+                    <button type="submit" class="btn-submit">Generate Confirmation Letter</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- ===== PROVISIONAL ADMISSION LETTER MODAL ===== -->
+    <div id="provisionalAdmissionModal" class="provisional-admission-modal">
+        <div class="provisional-admission-modal-content">
+            <div class="provisional-admission-modal-header">
+                <h2>GM LEGACY SCHOOL</h2>
+                <p>(Under Srishyla Education Trust, Davanagere)</p>
+                <h3>Provisional Admission Letter Generator</h3>
+                <span class="provisional-admission-close">&times;</span>
+            </div>
+            
+            <form id="provisionalAdmissionForm" class="provisional-admission-form">
+                <!-- Letter Details -->
+                <div class="form-section">
+                    <h4>Letter Details</h4>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="issue_date">Issue Date *</label>
+                            <input type="date" id="issue_date" name="issue_date" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="academic_year_pal">Academic Year *</label>
+                            <select id="academic_year_pal" name="academic_year" required>
+                                <option value="">Select Academic Year</option>
+                                <option value="2024-25">2024-25</option>
+                                <option value="2025-26">2025-26</option>
+                                <option value="2026-27">2026-27</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Parent/Guardian Information -->
+                <div class="form-section">
+                    <h4>Parent/Guardian Information</h4>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="parent_name_pal">Parent/Guardian Name *</label>
+                            <input type="text" id="parent_name_pal" name="parent_name" required placeholder="Mr./Mrs. Full Name">
+                        </div>
+                        <div class="form-group">
+                            <label for="contact_number_pal">Contact Number *</label>
+                            <input type="tel" id="contact_number_pal" name="contact_number" pattern="[0-9]{10}" required>
+                        </div>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group full-width">
+                            <label for="parent_address_pal">Parent Address *</label>
+                            <textarea id="parent_address_pal" name="parent_address" rows="3" required placeholder="Complete residential address"></textarea>
+                        </div>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="email_id_pal">Email ID (Optional)</label>
+                            <input type="email" id="email_id_pal" name="email_id" placeholder="For email notification">
+                        </div>
+                        <div class="form-group">
+                            <label for="application_reference">Application Reference (Optional)</label>
+                            <input type="text" id="application_reference" name="application_reference" placeholder="Application No. if available">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Student Information -->
+                <div class="form-section">
+                    <h4>Student Information</h4>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="student_name_pal">Student Name *</label>
+                            <input type="text" id="student_name_pal" name="student_name" required placeholder="Full name of the student">
+                        </div>
+                        <div class="form-group">
+                            <label for="class_admitted">Class for Admission *</label>
+                            <select id="class_admitted" name="class_admitted" required>
+                                <option value="">Select Class</option>
+                                <option value="Pre-KG">Pre-KG</option>
+                                <option value="LKG">LKG</option>
+                                <option value="UKG">UKG</option>
+                                <option value="1">Class 1</option>
+                                <option value="2">Class 2</option>
+                                <option value="3">Class 3</option>
+                                <option value="4">Class 4</option>
+                                <option value="5">Class 5</option>
+                                <option value="6">Class 6</option>
+                                <option value="7">Class 7</option>
+                                <option value="8">Class 8</option>
+                                <option value="9">Class 9</option>
+                                <option value="10">Class 10</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Admission Details -->
+                <div class="form-section">
+                    <h4>Admission Timeline</h4>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="admission_deadline">Admission Formalities Deadline *</label>
+                            <input type="date" id="admission_deadline" name="admission_deadline" required>
+                        </div>
+                    </div>
+                    
+                    <div class="deadline-note">
+                        <p><i class="fas fa-info-circle"></i> The deadline should be at least 7-15 days from the issue date to allow sufficient time for document preparation.</p>
+                    </div>
+                </div>
+
+                <!-- Letter Preview Note -->
+                <div class="form-section">
+                    <div class="preview-note">
+                        <h4>Letter Contents</h4>
+                        <p>The provisional admission letter will include:</p>
+                        <ul>
+                            <li>Official school letterhead and details</li>
+                            <li>Provisional admission confirmation</li>
+                            <li>Conditions for final admission</li>
+                            <li>Required documents list</li>
+                            <li>Admission formalities deadline</li>
+                            <li>Principal's signature and school seal</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Submit Button -->
+                <div class="form-actions">
+                    <button type="button" class="btn-cancel" onclick="closeProvisionalAdmissionModal()">Cancel</button>
+                    <button type="submit" class="btn-submit">Generate Letter</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- ===== LETTER PREVIEW MODAL ===== -->
+    <div id="letterPreviewModal" class="letter-preview-modal">
+        <div class="letter-preview-modal-content">
+            <div class="letter-preview-header">
+                <h3>Provisional Admission Letter</h3>
+                <span class="letter-preview-close">&times;</span>
+            </div>
+            <div class="letter-preview-body" id="letterPreviewContent">
+                <!-- Letter content will be inserted here -->
+            </div>
+            <div class="letter-preview-actions">
+                <button type="button" class="btn-print" onclick="printLetter()">
+                    <i class="fas fa-print"></i> Print Letter
+                </button>
+                <button type="button" class="btn-download" onclick="downloadLetter()">
+                    <i class="fas fa-download"></i> Download PDF
+                </button>
+                <button type="button" class="btn-close" onclick="closeLetterPreview()">Close</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- ===== ADMISSION FORM MODAL ===== -->
+    <div id="admissionModal" class="admission-modal">
+        <div class="admission-modal-content">
+            <div class="admission-modal-header">
+                <h2>GM LEGACY SCHOOL</h2>
+                <h3>Admission Application Form</h3>
+                <span class="admission-close">&times;</span>
+            </div>
+            
+            <form id="admissionForm" class="admission-form">
+                <!-- Application Details -->
+                <div class="form-section">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="application_no">Application No.</label>
+                            <input type="text" id="application_no" name="application_no" readonly placeholder="Auto-generated">
+                        </div>
+                        <div class="form-group">
+                            <label for="academic_year_app">Academic Year *</label>
+                            <select id="academic_year_app" name="academic_year" required>
+                                <option value="">Select Academic Year</option>
+                                <option value="2024-25">2024-25</option>
+                                <option value="2025-26">2025-26</option>
+                                <option value="2026-27">2026-27</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- A. Student Information -->
+                <div class="form-section">
+                    <h4>A. Student Information</h4>
+                    <div class="form-row">
+                        <div class="form-group full-width">
+                            <label for="full_name">Full Name of the Student *</label>
+                            <input type="text" id="full_name" name="full_name" required>
+                        </div>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="date_of_birth_app">Date of Birth (as per Birth Certificate) *</label>
+                            <input type="date" id="date_of_birth_app" name="date_of_birth" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="age_as_on_june">Age as on 1st June *</label>
+                            <input type="number" id="age_as_on_june" name="age_as_on_june" min="3" max="18" required>
+                        </div>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>Gender *</label>
+                            <div class="radio-group">
+                                <label><input type="radio" name="gender" value="Male" required> Male</label>
+                                <label><input type="radio" name="gender" value="Female" required> Female</label>
+                                <label><input type="radio" name="gender" value="Other" required> Other</label>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="nationality">Nationality *</label>
+                            <input type="text" id="nationality" name="nationality" value="Indian" required>
+                        </div>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="religion_community">Religion / Community (Optional)</label>
+                            <input type="text" id="religion_community" name="religion_community">
+                        </div>
+                        <div class="form-group">
+                            <label for="mother_tongue">Mother Tongue *</label>
+                            <input type="text" id="mother_tongue" name="mother_tongue" required>
+                        </div>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="aadhaar_number">Aadhaar Number (if available)</label>
+                            <input type="text" id="aadhaar_number" name="aadhaar_number" pattern="[0-9]{12}" placeholder="12-digit Aadhaar number">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- B. Admission Details -->
+                <div class="form-section">
+                    <h4>B. Admission Details</h4>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="class_sought">Class for which Admission is sought *</label>
+                            <select id="class_sought" name="class_sought" required>
+                                <option value="">Select Class</option>
+                                <option value="Pre-KG">Pre-KG</option>
+                                <option value="LKG">LKG</option>
+                                <option value="UKG">UKG</option>
+                                <option value="Class 1">Class 1</option>
+                                <option value="Class 2">Class 2</option>
+                                <option value="Class 3">Class 3</option>
+                                <option value="Class 4">Class 4</option>
+                                <option value="Class 5">Class 5</option>
+                                <option value="Class 6">Class 6</option>
+                                <option value="Class 7">Class 7</option>
+                                <option value="Class 8">Class 8</option>
+                                <option value="Class 9">Class 9</option>
+                                <option value="Class 10">Class 10</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="previous_school">Previous School Name (if applicable)</label>
+                            <input type="text" id="previous_school" name="previous_school">
+                        </div>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="medium_of_instruction">Medium of Instruction *</label>
+                            <select id="medium_of_instruction" name="medium_of_instruction" required>
+                                <option value="">Select Medium</option>
+                                <option value="English">English</option>
+                                <option value="Kannada">Kannada</option>
+                                <option value="Hindi">Hindi</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- C. Parent/Guardian Details -->
+                <div class="form-section">
+                    <h4>C. Parent / Guardian Details</h4>
+                    
+                    <!-- Father's Details -->
+                    <div class="parent-subsection">
+                        <h5>Father's Details</h5>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="fathers_name">Father's Name *</label>
+                                <input type="text" id="fathers_name" name="fathers_name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="fathers_qualification">Qualification *</label>
+                                <input type="text" id="fathers_qualification" name="fathers_qualification" required>
+                            </div>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="fathers_occupation">Occupation *</label>
+                                <input type="text" id="fathers_occupation" name="fathers_occupation" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="fathers_mobile">Mobile Number *</label>
+                                <input type="tel" id="fathers_mobile" name="fathers_mobile" pattern="[0-9]{10}" required>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Mother's Details -->
+                    <div class="parent-subsection">
+                        <h5>Mother's Details</h5>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="mothers_name">Mother's Name *</label>
+                                <input type="text" id="mothers_name" name="mothers_name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="mothers_qualification">Qualification *</label>
+                                <input type="text" id="mothers_qualification" name="mothers_qualification" required>
+                            </div>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="mothers_occupation">Occupation *</label>
+                                <input type="text" id="mothers_occupation" name="mothers_occupation" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="mothers_mobile">Mobile Number *</label>
+                                <input type="tel" id="mothers_mobile" name="mothers_mobile" pattern="[0-9]{10}" required>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="annual_family_income">Annual Family Income (Optional)</label>
+                            <select id="annual_family_income" name="annual_family_income">
+                                <option value="">Select Income Range</option>
+                                <option value="Below 2 Lakhs">Below ₹2 Lakhs</option>
+                                <option value="2-5 Lakhs">₹2-5 Lakhs</option>
+                                <option value="5-10 Lakhs">₹5-10 Lakhs</option>
+                                <option value="10-20 Lakhs">₹10-20 Lakhs</option>
+                                <option value="Above 20 Lakhs">Above ₹20 Lakhs</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- D. Address -->
+                <div class="form-section">
+                    <h4>D. Address</h4>
+                    <div class="form-row">
+                        <div class="form-group full-width">
+                            <label for="residential_address_app">Residential Address *</label>
+                            <textarea id="residential_address_app" name="residential_address" rows="3" required></textarea>
+                        </div>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="emergency_contact">Emergency Contact Number *</label>
+                            <input type="tel" id="emergency_contact" name="emergency_contact" pattern="[0-9]{10}" required>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- E. Declaration -->
+                <div class="form-section">
+                    <h4>E. Declaration by Parent / Guardian</h4>
+                    <div class="declaration-text">
+                        <p>I hereby declare that the information given above is true and correct to the best of my knowledge. I agree to abide by the rules and regulations of GM Legacy School.</p>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="parent_name_app">Name of Parent/Guardian *</label>
+                            <input type="text" id="parent_name_app" name="parent_name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="declaration_date">Date *</label>
+                            <input type="date" id="declaration_date" name="declaration_date" required>
+                        </div>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group full-width">
+                            <label>
+                                <input type="checkbox" id="declaration_agreement" required>
+                                I agree to the above declaration and terms & conditions *
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Submit Button -->
+                <div class="form-actions">
+                    <button type="button" class="btn-cancel" onclick="closeAdmissionModal()">Cancel</button>
+                    <button type="submit" class="btn-submit">Submit Application</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- ===== ENQUIRY FORM MODAL ===== -->
+    <div id="enquiryModal" class="enquiry-modal">
+        <div class="enquiry-modal-content">
+            <div class="enquiry-modal-header">
+                <h2>GM LEGACY SCHOOL</h2>
+                <p>(Under Srishyla Education Trust, Davanagere)</p>
+                <h3>Admission Enquiry Form</h3>
+                <span class="enquiry-close">&times;</span>
+            </div>
+            
+            <form id="enquiryForm" class="enquiry-form">
+                <!-- Student Details -->
+                <div class="form-section">
+                    <h4>1. Student Details</h4>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="child_name">Name of the Child *</label>
+                            <input type="text" id="child_name" name="child_name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="date_of_birth">Date of Birth *</label>
+                            <input type="date" id="date_of_birth" name="date_of_birth" required>
+                        </div>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>Gender *</label>
+                            <div class="radio-group">
+                                <label><input type="radio" name="gender" value="male" required> Male</label>
+                                <label><input type="radio" name="gender" value="female" required> Female</label>
+                                <label><input type="radio" name="gender" value="other" required> Other</label>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="class_seeking">Class Seeking Admission To *</label>
+                            <select id="class_seeking" name="class_seeking" required>
+                                <option value="">Select Class</option>
+                                <option value="Pre-KG">Pre-KG</option>
+                                <option value="LKG">LKG</option>
+                                <option value="UKG">UKG</option>
+                                <option value="Class 1">Class 1</option>
+                                <option value="Class 2">Class 2</option>
+                                <option value="Class 3">Class 3</option>
+                                <option value="Class 4">Class 4</option>
+                                <option value="Class 5">Class 5</option>
+                                <option value="Class 6">Class 6</option>
+                                <option value="Class 7">Class 7</option>
+                                <option value="Class 8">Class 8</option>
+                                <option value="Class 9">Class 9</option>
+                                <option value="Class 10">Class 10</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="academic_year">Academic Year *</label>
+                            <select id="academic_year" name="academic_year" required>
+                                <option value="">Select Academic Year</option>
+                                <option value="2024-25">2024-25</option>
+                                <option value="2025-26">2025-26</option>
+                                <option value="2026-27">2026-27</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Parent/Guardian Details -->
+                <div class="form-section">
+                    <h4>2. Parent / Guardian Details</h4>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="father_name">Father's Name *</label>
+                            <input type="text" id="father_name" name="father_name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="mother_name">Mother's Name *</label>
+                            <input type="text" id="mother_name" name="mother_name" required>
+                        </div>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="occupation">Occupation *</label>
+                            <input type="text" id="occupation" name="occupation" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="contact_number">Contact Number *</label>
+                            <input type="tel" id="contact_number" name="contact_number" pattern="[0-9]{10}" required>
+                        </div>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="email_id">Email ID *</label>
+                            <input type="email" id="email_id" name="email_id" required>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Address -->
+                <div class="form-section">
+                    <h4>3. Address</h4>
+                    <div class="form-row">
+                        <div class="form-group full-width">
+                            <label for="residential_address">Residential Address *</label>
+                            <textarea id="residential_address" name="residential_address" rows="3" required></textarea>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Source -->
+                <div class="form-section">
+                    <h4>4. How did you come to know about the School?</h4>
+                    <div class="checkbox-group">
+                        <label><input type="checkbox" name="source_newspaper"> Newspaper</label>
+                        <label><input type="checkbox" name="source_website"> Website</label>
+                        <label><input type="checkbox" name="source_friends_relatives"> Friends/Relatives</label>
+                        <label><input type="checkbox" name="source_social_media"> Social Media</label>
+                    </div>
+                    <div class="form-group">
+                        <label for="source_others">Others:</label>
+                        <input type="text" id="source_others" name="source_others" placeholder="Please specify">
+                    </div>
+                </div>
+
+                <!-- Remarks -->
+                <div class="form-section">
+                    <h4>5. Remarks / Queries (if any):</h4>
+                    <div class="form-row">
+                        <div class="form-group full-width">
+                            <textarea id="remarks_queries" name="remarks_queries" rows="3" placeholder="Enter your remarks or queries here..."></textarea>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Signature -->
+                <div class="form-section">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="signature_date">Date *</label>
+                            <input type="date" id="signature_date" name="signature_date" required>
+                        </div>
+                    </div>
+                    <p class="signature-note">By submitting this form, I acknowledge that the information provided is accurate and complete.</p>
+                </div>
+
+                <!-- Submit Button -->
+                <div class="form-actions">
+                    <button type="button" class="btn-cancel" onclick="closeEnquiryModal()">Cancel</button>
+                    <button type="submit" class="btn-submit">Submit Enquiry</button>
+                </div>
+            </form>
+        </div>
+    </div>
 
     <!-- ===== FOOTER ===== -->
     <footer class="footer" id="footer">
