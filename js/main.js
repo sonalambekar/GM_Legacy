@@ -786,17 +786,10 @@ function initAdmissionForm() {
     // Handle form submission
     form.addEventListener('submit', handleAdmissionSubmission);
     
-    // Add click event to admission process links
-    const admissionLinks = document.querySelectorAll('a[href*="admission"], a[href*="process"]');
-    admissionLinks.forEach(link => {
-        // Only add event if it's the admission process card
-        if (link.textContent.includes('Admission Process') || link.href.includes('process.html')) {
-            link.addEventListener('click', function(e) {
-                e.preventDefault();
-                openAdmissionModal();
-            });
-        }
-    });
+    // Add click event to admission process links - but exclude navbar links
+    const admissionProcessCard = document.querySelector('.info-grid-modern a[onclick*="openAdmissionModal"]');
+    // The admission process card in the information section already has onclick="openAdmissionModal()"
+    // so we don't need to add additional event listeners that might conflict
     
     // Auto-calculate age when date of birth changes
     const dobField = document.getElementById('date_of_birth_app');
