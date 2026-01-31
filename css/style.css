@@ -3474,9 +3474,24 @@ section {
 }
 
 .initiatives-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    display: flex;
     gap: 30px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    scroll-behavior: smooth;
+    padding-bottom: 10px;
+    /* Hide scrollbar for Chrome, Safari and Opera */
+    -webkit-overflow-scrolling: touch;
+}
+
+.initiatives-grid::-webkit-scrollbar {
+    display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.initiatives-grid {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
 }
 
 .init-card {
@@ -3488,6 +3503,8 @@ section {
     height: 100%;
     display: flex;
     flex-direction: column;
+    flex: 0 0 300px; /* Fixed width for each card */
+    min-width: 300px; /* Minimum width to maintain consistency */
 }
 
 .init-card:hover {
@@ -3551,14 +3568,22 @@ section {
 }
 
 @media (max-width: 1200px) {
-    .initiatives-grid {
-        grid-template-columns: repeat(2, 1fr);
+    .init-card {
+        flex: 0 0 280px;
+        min-width: 280px;
     }
 }
 
 @media (max-width: 768px) {
     .initiatives-grid {
-        grid-template-columns: 1fr;
+        gap: 20px;
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+    
+    .init-card {
+        flex: 0 0 260px;
+        min-width: 260px;
     }
 
     .initiatives-section {
